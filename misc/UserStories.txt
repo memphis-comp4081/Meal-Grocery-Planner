@@ -28,10 +28,16 @@ As a user, I want to have an alert system that will be able to notify me when I 
 Title: Share meals with others.
 As a user, I want to share my meals with others.
 
-Title: Allows uses to pre-plan meals.
+Title: Allows users to pre-plan meals.
 As a user, I want the option to pre-plan my meal from component recipes and create a shopping list.
 
+=======Paul Edwards======
 
+Title: Allows users to add recipies.
+As a user, I want to add recipies so that I have more options
+
+Title: Remove and edit Recipies
+As a user, I want the ability to remove/edit recipies, so that I will not continue to make things I dont like.
 
 ******Removed Duplicate US********
 As a user, I want an easy-to-use interface so I can efficiently add new ingredients and recipes
