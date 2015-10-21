@@ -30,3 +30,8 @@ As a user, I want to share my meals with others.
 
 Title: Allows uses to pre-plan meals.
 As a user, I want the option to pre-plan my meal from component recipes and create a shopping list.
+
+
+
+******Removed Duplicate US********
+As a user, I want an easy-to-use interface so I can efficiently add new ingredients and recipes
