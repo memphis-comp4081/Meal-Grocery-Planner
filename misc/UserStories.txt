@@ -5,3 +5,6 @@ As a homeowner, I want a way to add newly-bought ingredients to my pantry
 As a planner, I want a list of meal parts that can be combined so I can create my own meals from pieces
 As an eater, I want a way to prevent cooking the same meal too often so I won't get tired of eating it
 
+=======Cletus Hatten=======
+As a user, I want to be able to measure/track the amount of food I have in my refrigerator.
+As a user, I want to have an alert system that will be able to notify me when I am low on components.
