@@ -1,0 +1,45 @@
+Ingredient: an item that may be combined with others to make a meal item
+	Ingredient ID		int			(i.e. 1)				PK
+	Description			string		(i.e. "Ground Beef")
+	Unit Of Measure		string		(i.e. "lb.")
+	
+Component: a part of a meal (entree, side item, etc.)
+	Component ID		int			(i.e. 1)				PK
+	Description			string		(i.e. "Hamburger")
+	Instructions		string		(i.e. "Form the ground beef into patties. Place patties on the grill until juices rise to the top. Flip the patties and let cook until juices rise to the top.")
+
+Inventory: a list of ingredients that a user has on hand
+	Inventory ID		int			(i.e. 1)				PK
+	Ingredient ID		int			(i.e. 1)				FK: Ingredient.IngredientID
+	Quantity			int			(i.e. 1)
+	(Special Note: this would be 1lb. of ground beef)
+
+Recipe: a list of ingredients necessary for making a component
+	Recipe ID			int			(i.e. 1)				PK
+	Component ID		int			(i.e. 1)				FK: Component.ComponentID
+	Ingredient ID		int			(i.e. 1)				FK: Ingredient.IngredientID
+	Ingredient Quantity	int			(i.e. 1)
+	Servings			int			(i.e. 4)
+	(Special Note: this recipe would make 4 hamburger patties out of a pound of ground beef)
+
+Complement: a menu item that matches well with another menu item
+	Component ID 1		int			(i.e. 1)				FK: Component.ComponentID
+	Component ID 2		int			(i.e. 200)				FK: Component.ComponentID
+
+Menu: a planned time for a meal (basically just group date and what it's for, like lunch, dinner, snack, etc.)
+	MenuID				int			(i.e. 1)				PK
+	Day					date		(i.e. 10-26-2012)
+	Meal				string		(i.e. lunch)
+
+Meal: a meal, made up of various components and scheduled for a menu date/time
+	Menu ID				int			(i.e. 1)				FK: Menu.MenuID
+	Component ID		int			(i.e. 1)				FK: Component.ComponentID
+
+Schema:
+Ingredient 	(one)====>(many) Recipe
+Ingredient 	(one)====>(one) Inventory
+Ingredient	(one)====>(many) Recipe
+Component 	(one)====>(many) Recipe
+Component	(one)====>(many) Complement
+Component	(one)====>(many) Meal
+Menu		(one)====>(many) Meal
