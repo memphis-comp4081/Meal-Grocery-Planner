@@ -102,5 +102,24 @@ As a user, I want the ability to view/edit upcoming meals, so that I know what m
 Est: 1 time unit											priority: 30
 _________________________________________________________________________________________________
 
+******Suggested changes (Jonathan)*******
+US: Allows user adds ingredients to current stocks
+    Modify title: "Allows user to add ingredients to current stock"
+US: Allows users to add recipies.
+    Modify title: "Allows user to add recipes"
+    Modify US: "As a user, I want to add recipes so that I have more options"
+US: Remove and edit Recipies
+    Modify title: "Remove and edit Recipes"
+    Modify US: "As a user, I want the ability to remove/edit recipes, so that meals I dont like will not be recommended."
+US: View and edit upcoming meals
+    Modify US: "As a user, I want the ability to view/edit upcoming meals, so that I can make changes to the meals based on
+      my tastes."
+
+New US: 
+  Title: "Generate full meals based on inventory and tastes"
+  US: "As a user, I want to have meals generated for me based on what ingredients I have and what foods I like."
+  Priority: 70
+  Est: 5 time units
+
 ******Removed Duplicate US********
 As a user, I want an easy-to-use interface so I can efficiently add new ingredients and recipes
