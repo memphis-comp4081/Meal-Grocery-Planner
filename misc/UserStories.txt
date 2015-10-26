@@ -1,43 +1,106 @@
 =======Jonathan Wood=======
 
-Title: Matches recipes to ingredients currently at home.
-As a user, I want recipes matched to what I have at home so I can make dinner without shopping
+_________________________________________________________________________________________________
+Title: Matches componets to ingredients currently at home.
+As a user, I want componets matched to what I have at home so I can make dinner without shopping
 
+Est: 5 time units											priority: 10
+_________________________________________________________________________________________________
+
+
+_________________________________________________________________________________________________
 Title: Generates grocery list to offset at home ingredients.
 As a user, I want a generated grocery list so I can buy what I need more easily
 
+Est: 5 time units											priority: 50
+_________________________________________________________________________________________________
+
+
+_________________________________________________________________________________________________
 Title: Allows user adds ingredients to current stocks
 As a user, I want a way to add newly-bought ingredients to my pantry
 
+Est: 1 time unit											priority: 10
+_________________________________________________________________________________________________
+
+
+_________________________________________________________________________________________________
 Title: Recommends components(specific courses) to create a meal.
 As a user, I want a list of meal components that can be combined so I can create my own balanced meals
 
+Est: 2 time units											priority: 20
+_________________________________________________________________________________________________
+
+
+_________________________________________________________________________________________________
 Title: Tracks recently created meals.
 As a user, I want a way to prevent cooking the same meal too often so I won't get tired of eating it
 
+Est: 1 time unit											priority: 45
+_________________________________________________________________________________________________
+
+
 =======Cletus Hatten=======
 
+_________________________________________________________________________________________________
 Title: Tracks current stocks of ingrediants.
-As a user, I want to be able to measure/track the amount of ingredients I have in my refrigerator.
+As a user, I want to be able to measure/track the amount of ingredients I have in my pantry.
 
+Est: 2 time units											priority: 10
+_________________________________________________________________________________________________
+
+
+_________________________________________________________________________________________________
 Title: Alerts when ingredients are low.
 As a user, I want to have an alert system that will be able to notify me when I am low on ingredients.
 
+Est: 3 time units											priority: 40
+_________________________________________________________________________________________________
+
 =======Kevin Townsend=======
 
+_________________________________________________________________________________________________
 Title: Share meals with others.
 As a user, I want to share my meals with others.
 
+Est: 3 time unit											priority: 60
+_________________________________________________________________________________________________
+
+
+_________________________________________________________________________________________________
 Title: Allows users to pre-plan meals.
 As a user, I want the option to pre-plan my meal from component recipes and create a shopping list.
 
+Est: 3 time unit											priority: 50
+_________________________________________________________________________________________________
+
+
 =======Paul Edwards======
 
+_________________________________________________________________________________________________
 Title: Allows users to add recipies.
 As a user, I want to add recipies so that I have more options
 
+Est: 1 time unit											priority: 20
+_________________________________________________________________________________________________
+
+
+_________________________________________________________________________________________________
 Title: Remove and edit Recipies
 As a user, I want the ability to remove/edit recipies, so that I will not continue to make things I dont like.
+
+Est: 1 time unit											priority: 20
+_________________________________________________________________________________________________
+
+
+=======Drew Stabenow======
+
+_________________________________________________________________________________________________
+Title: View and edit upcoming meals
+As a user, I want the ability to view/edit upcoming meals, so that I know what meals I am going to eat and cook and change things based on my likes.
+
+Est: 1 time unit											priority: 30
+_________________________________________________________________________________________________
 
 ******Removed Duplicate US********
 As a user, I want an easy-to-use interface so I can efficiently add new ingredients and recipes
