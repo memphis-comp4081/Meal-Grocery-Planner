@@ -1,0 +1,44 @@
+Ingredient: an item that may be combined with others to make a meal item
+	Description			string		(i.e. "Ground Beef")
+	Unit Of Measure		string		(i.e. "lb.")
+	
+Component: a part of a meal (entree, side item, etc.)
+	Ingredient ID 		int 		(i.e. 1)				FK: Ingredient.id
+	Description			string		(i.e. "Hamburger")
+	Instructions		string		(i.e. "Form the ground beef into patties. Place patties on the grill until juices rise to the top. Flip the patties and let cook until juices rise to the top.")
+
+Pantry: a list of ingredients that a user has on hand
+	Ingredient ID		int			(i.e. 1)				FK: Ingredient.IngredientID
+	User ID 			int 		(i.e. 1) 				FK: User.id
+	Quantity			int			(i.e. 1)
+	(Special Note: this would be 1lb. of ground beef)
+
+
+Meal: a meal, made up of various components and scheduled for a menu date/time
+	Name				String   	(i.e. "Chicken And Waffles")
+	Component ID		int			(i.e. 1)				FK: Component.ComponentID
+
+MealList:A list of meals a user enjoys
+	Meal ID 			int 		(i.e. 1)				FK: Meal.id
+	User ID 			int 		(i.e. 1)				Fk:User.id
+
+Menu: a planned time for a meal (basically just group date and what it's for, like lunch, dinner, snack, etc.)
+	User ID				int			(i.e. 1)				FK:User.id
+	Day					date		(i.e. 10-26-2012)
+	Description			string		(i.e. lunch)
+	Meal ID
+
+User:  The person using the app
+	Name 			String 			(i.e. "John")
+
+
+
+Schema:
+Ingredient 	(many)====>(many) Component
+Pantry	 	(one)====>(one) Ingrendient
+Component	(many)====>(many) Meal
+Menu		(one)====>(many) Meal
+User  		(one)====>(one) Pantry
+User   		(one)=====>(one)MealList
+User 		(one)=====>(many)Menu
+MealList 	(many)======>(many)Meal
