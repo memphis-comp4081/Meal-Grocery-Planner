@@ -17,6 +17,7 @@ Pantry: a list of ingredients that a user has on hand
 Meal: a meal, made up of various components and scheduled for a menu date/time
 	Name				String   	(i.e. "Chicken And Waffles")
 	Component ID		int			(i.e. 1)				FK: Component.ComponentID
+	Description 		String 		(i.e. "Fried chicken on top of waffles, served with maple syrup.")
 
 MealList:A list of meals a user enjoys
 	Meal ID 			int 		(i.e. 1)				FK: Meal.id
