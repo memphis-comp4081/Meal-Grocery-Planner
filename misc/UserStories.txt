@@ -9,8 +9,8 @@ ________________________________________________________________________________
 
 
 _________________________________________________________________________________________________
-Title: Generates grocery list to offset at home ingredients.
-As a user, I want a generated grocery list so I can buy what I need more easily
+Title: Generates shopping list to offset at home ingredients.
+As a user, I want a generated shopping list so I can buy what I need more easily
 
 Est: 5 time units											priority: 50
 _________________________________________________________________________________________________
@@ -78,16 +78,16 @@ ________________________________________________________________________________
 =======Paul Edwards======
 
 _________________________________________________________________________________________________
-Title: Allows user to add recipes.
-As a user, I want to add recipes so that I have more options.
+Title: Allows user to add component.
+As a user, I want to add components so that I have more options.
 
 Est: 1 time unit											priority: 20
 _________________________________________________________________________________________________
 
 
 _________________________________________________________________________________________________
-Title: Remove and edit Recipes
-As a user, I want the ability to remove/edit recipes, so that meals I dont like will not be recommended.
+Title: Remove and edit components
+As a user, I want the ability to remove/edit component, so that meals I dont like will not be recommended.
 
 Est: 1 time unit											priority: 20
 _________________________________________________________________________________________________
