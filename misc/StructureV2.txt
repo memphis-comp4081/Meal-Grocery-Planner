@@ -13,7 +13,6 @@ Pantry: a list of ingredients that a user has on hand
 	Quantity			int			(i.e. 1)
 	(Special Note: this would be 1lb. of ground beef)
 
-
 Meal: a meal, made up of various components and scheduled for a menu date/time
 	Name				String   	(i.e. "Chicken And Waffles")
 	Component ID		int			(i.e. 1)				FK: Component.ComponentID
@@ -31,6 +30,8 @@ Menu: a planned time for a meal (basically just group date and what it's for, li
 
 User:  The person using the app
 	Name 			String 			(i.e. "John")
+	Email 			String 			(i.e. "John@email.com")
+	Password 		String 			(i.e. "p@55w0rd")
 
 
 
