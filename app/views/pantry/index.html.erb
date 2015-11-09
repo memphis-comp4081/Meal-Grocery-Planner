@@ -1,0 +1,19 @@
+<h1>Pantry#index</h1>
+
+<table>
+	<tr>
+		<th>Ingredient</th>
+		<th>Quantity</th>
+	</tr>
+
+	<% @pantries.each do |pantry| %>
+	
+	<tr>
+		<td><%= pantry.ingredient.description %></td>
+		<td><%= pantry.quantity %> <%= pantry.ingredient.unit_of_measure %></td>
+		<td>[<%= link_to "edit", pantry_edit_path(pantry), method: :edit %>]</td>
+	</tr>
+
+	<% end %>
+
+</table>

@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  root 'static_pages#home'
+  get 'pantry', to: 'pantry#index', as: 'pantry'
+  get 'pantry/add', to: 'pantry#add', as: 'pantry_add'
+  post 'pantry/add', to: 'pantry#create'
+  get 'pantry/:id/edit', to: 'pantry#edit', as: 'pantry_edit'
+  post 'pantry/:id/edit', to: 'pantry#update'
+  patch 'pantry/:id', to: 'pantry#update'
+  put 'pantry/:id', to: 'pantry#update'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
