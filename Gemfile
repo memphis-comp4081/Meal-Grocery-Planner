@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # RVM uses these two lines to set the Ruby verison and gemset
 ruby "2.2.1"
 
+# Added the gem devise for top secret password support :)
+gem 'devise'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
