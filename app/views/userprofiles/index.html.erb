@@ -1,0 +1,24 @@
+<h1>UserProfile Index</h1>
+
+<table>
+
+<tr>
+	<th>Name</th>
+	<th>User Name</th>
+	<th>Phone Number</th>
+	<th>Email Account</th>
+</tr>
+
+<% @userprofiles.each do |userprofile| %>
+
+<tr>
+	<td><%= userprofile.name %></td>
+	<td><%= userprofile.user_name %></td>
+	<td><%= userprofile.phone_number %></td>
+	<td><%= userprofile.email %></td>
+	<td>[<%= link_to "update", edit_user_profile_path(user_profile) %>|<%= link_to "delete", user_profile_path(user_profile), method: :delete  %>]</td>
+</tr>
+
+<% end %>
+
+</table>

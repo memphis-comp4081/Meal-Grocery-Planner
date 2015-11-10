@@ -1,0 +1,39 @@
+<h1>Update User Profile<h1>
+
+<%= form_for(@user_profile) do |f| %>
+
+<p>
+	<%= f.label :name %>:
+	<%= f.text_field :name %>
+</p>
+
+<p>
+	<%= f.label :user_name %>:
+	<%= f.text_field :user_name %>
+</p>
+
+<p>
+	<%= f.label :phone_number %>:
+	<%= f.text_field :phone_number %>
+</p>
+
+<p>
+	<%= f.label :email %>:
+	<%= f.text_field :email %>
+</p>
+
+<p>
+	<%= f.label :sec_quest %>:
+	<%= f.text_field :sec_quest %>
+</p>
+
+<p>
+	<%= f.label :passwrd %>:
+	<%= f.text_field :sec_quest %>
+</p>
+
+<p>
+	<%= f.submit %>
+</p>
+
+<% end %>
