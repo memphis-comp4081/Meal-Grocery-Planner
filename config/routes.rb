@@ -2,8 +2,11 @@ Rails.application.routes.draw do
 
 
   # root to home for Devise, to possibly be changed later.
-  root to: 'home#index'
-  get 'home', to: 'home#index', as: 'home'
+  
+  devise_scope :user do
+    root to: 'devise/sessions#new'
+  end
+  # get 'home', to: 'devise/sessions#new', as: 'home'
 
   devise_for :users
 
