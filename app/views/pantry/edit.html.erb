@@ -1,2 +1,20 @@
-<h1>Pantry#edit</h1>
-<p>Find me in app/views/pantry/edit.html.erb</p>
+<h1>Edit Pantry Item</h1>
+
+<%= form_for(@pantry) do |f| %>
+
+<p>
+<%= f.label 'Ingredient' %>:
+<%= @pantry.ingredient.description %>
+</p>
+
+<p>
+<%= f.label :quantity %>:
+<%= f.text_field :quantity %>
+<%= f.label @pantry.ingredient.unit_of_measure %>
+</p>
+
+<p>
+<%= f.submit %>
+</p>
+
+<% end %>

@@ -5,13 +5,13 @@ class PantryController < ApplicationController
 
 	def add
 		@pantry = Pantry.new
-		@user = User.all
-		@ingredient = Ingredient.all
+		@users = User.all
+		@ingredients = Ingredient.all
 	end
 
 	def create
 		@user = User.find(params[:pantry][:user_id])
-		@ingredient = User.find(params[:pantry][:ingredient_id])
+		@ingredient = Ingredient.find(params[:pantry][:ingredient_id])
 		@pantry = Pantry.new(params.require(:pantry).permit(:quantity))
 		@pantry.user = @user
 		@pantry.ingredient = @ingredient
@@ -20,14 +20,15 @@ class PantryController < ApplicationController
 	end
 
 	def edit
+		@ingredients = Ingredient.all
 		@pantry = Pantry.find(params[:id])
-		@ingredient = Ingredient.find(params[:id])
-		#@user = UserProfile.find(params[:id])
 	end
 
 	def update
+		#@ingredient = Ingredient.find(params[:pantry][:ingredient_id])
 		@pantry = Pantry.find(params[:id])
-		@pantry.update(params.require(:id).permit(:quantity))
+		@pantry.update(params.require(:pantry).permit(:quantity))
+		@pantry.save!
 		redirect_to pantry_url
 	end
 end

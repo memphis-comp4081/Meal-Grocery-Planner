@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20151109040520) do
   end
 
   create_table "pantries", force: :cascade do |t|
-    t.integer  "quantity"
+    t.decimal  "quantity"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "user_id"
