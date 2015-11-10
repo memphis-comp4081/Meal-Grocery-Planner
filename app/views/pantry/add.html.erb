@@ -1,0 +1,23 @@
+<h1>Add Item to Pantry</h1>
+
+<%= form_for(:pantry) do |f| %>
+
+<p>
+<%= f.label :owner %>:
+<%= f.collection_select(:user_id, @users, :id, :name) %>
+</p>
+
+<p>
+<%= f.label :ingredient %>:
+<%= f.collection_select(:ingredient_id, @ingredients, :id, :description) %>
+</p>
+
+<p>
+<%= f.label :quantity %>:
+<%= f.text_field :quantity %>
+</p>
+
+<p>
+<%= f.submit %>
+</p>
+<% end %>

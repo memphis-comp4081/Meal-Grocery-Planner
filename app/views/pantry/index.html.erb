@@ -1,0 +1,23 @@
+<h1>Items In Your Pantry</h1>
+
+<table>
+	<tr>
+		<th>Ingredient</th>
+		<th>Quantity</th>
+	</tr>
+
+	<% @pantries.each do |pantry| %>
+	
+	<tr>
+		<td><%= pantry.ingredient.description %></td>
+		<td><%= pantry.quantity %> <%= pantry.ingredient.unit_of_measure %></td>
+		<td>[<%= link_to "update", pantry_edit_path(pantry) %>]</td>
+	</tr>
+
+	<% end %>
+
+</table>
+
+<p>
+	<%= link_to "Add New Ingredient to Pantry", pantry_add_path %>
+</p>
