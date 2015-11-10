@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  # root to home for Devise, to possibly be changed later.
+  root to: 'home#index'
+
+
+
   root 'static_pages#home'
   get 'pantry', to: 'pantry#index', as: 'pantry'
   get 'pantry/add', to: 'pantry#add', as: 'pantry_add'
@@ -8,6 +14,11 @@ Rails.application.routes.draw do
   patch '/pantry.:id', to: 'pantry#update'
   post 'pantry/:id/edit', to: 'pantry#update'
   put '/pantry/:id', to: 'pantry#update'
+
+
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
