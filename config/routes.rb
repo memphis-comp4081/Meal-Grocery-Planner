@@ -4,8 +4,9 @@ Rails.application.routes.draw do
 
   # root to home for Devise, to possibly be changed later.
   devise_scope :user do
+    #authenticated is currently set to pantry to be changed later
     authenticated :user do
-      root 'home#index', as: :authenticated_root
+      root 'pantry#index', as: :authenticated_root
     end
 
     unauthenticated do
@@ -14,9 +15,6 @@ Rails.application.routes.draw do
   end
   # get 'home', to: 'devise/sessions#new', as: 'home'
 
-
-
-  root 'static_pages#home'
   get 'pantry', to: 'pantry#index', as: 'pantry'
   get 'pantry/add', to: 'pantry#add', as: 'pantry_add'
   post 'pantry/add', to: 'pantry#create'
