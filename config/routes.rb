@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
 
+  devise_for :users
 
   # root to home for Devise, to possibly be changed later.
-  
   devise_scope :user do
-    root to: 'devise/sessions#new'
+    authenticated :user do
+      root 'home#index', as: :authenticated_root
+    end
+
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
   end
   # get 'home', to: 'devise/sessions#new', as: 'home'
-
-  devise_for :users
 
 
 
