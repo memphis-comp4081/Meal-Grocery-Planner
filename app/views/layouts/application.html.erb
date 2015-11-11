@@ -9,10 +9,15 @@
 <body>
 
 	<!-- Sign out area -->
-
+<div class="container"> 
 	<% if user_signed_in? %>
-		<%=button_to 'Sign out', destroy_user_session_path(), method: :delete%>
-	<% end %>
+    <div class="row">
+      <div class="col-md-12">
+		    <%=button_to 'Sign out', destroy_user_session_path(), method: :delete%>
+	    </div>
+    </div>
+  <% end %>
+    
 
 	<!-- Flash messages as requested/required by Devise -->
    	<% if flash[:notice] %>
@@ -24,6 +29,6 @@
    	<% end %>
 
 <%= yield %>
-
+</div>
 </body>
 </html>
