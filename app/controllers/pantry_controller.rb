@@ -1,4 +1,8 @@
 class PantryController < ApplicationController
+	
+	#added to require login before pantry is shown.
+	before_action :authenticate_user!
+
 	def index
 		@pantries = Pantry.all
 	end
