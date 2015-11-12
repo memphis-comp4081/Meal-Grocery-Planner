@@ -6,8 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# jonathan = User.create!(name: "Jonathan", email: "jwood5@memphis.edu", password: "password")
-# kevin = User.create!(name: "Kevin", email: "ktwnsnd5@memphis.edu", password: "nopenopenope")
+jonathan = User.create!(email: "jonathan@memphis.edu", password: "password",
+						password_confirmation: "password")
+kevin = User.create!(email: "kevin@memphis.edu", password: "password",
+					 password_confirmation: "password")
+cletus = User.create!(email: "cletus@memphis.edu", password: "password",
+						password_confirmation: "password")
+drew = User.create!(email: "drew@memphis.edu", password: "password",
+					 password_confirmation: "password")
+paul = User.create!(email: "paul@memphis.edu", password: "password",
+						password_confirmation: "password")
 
 beef = Ingredient.create!(description: "Ground Beef", unit_of_measure: "pound(s)")
 bun = Ingredient.create!(description: "Hamburger Bun(s)", unit_of_measure: "bun(s)")
