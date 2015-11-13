@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   end
   # get 'home', to: 'devise/sessions#new', as: 'home'
 
+  get 'ingredient/add', to: 'ingredient#add', as: 'ingredient_add'
+  post 'ingredient/add', to: 'ingredient#create'
+
   get 'pantry', to: 'pantry#index', as: 'pantry'
   get 'pantry/add', to: 'pantry#add', as: 'pantry_add'
   post 'pantry/add', to: 'pantry#create'
