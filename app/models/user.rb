@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :pantries
+  has_many :meal_lists
   # to be changed based on the creation of other classes
   # has_one :meal_list
-  # has_many :menus
+  has_many :menus
 end

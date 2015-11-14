@@ -1,0 +1,26 @@
+
+<%= form_tag do %>
+<% if flash[:alert] %>
+<p style = "color:#ff0000;">Errors: <%= flash[:alert] %></p>
+<% end %>
+<P>Meal</p>
+<select name = "meal_select">
+	<% @meal_list.each do |menu| %>
+		<option value = "<%= menu.meal.id %>"><%= menu.meal.name %></option>
+	<% end %>
+</select>
+<br>
+
+<p>Date (MM/DD/YY)</p>
+<input type = "text" name = "date">
+
+<br>
+<p>Time (hour:minute)</p>
+<input type="text" name="time">
+<select name = "time_offset">
+	<option value = "0">AM</option>
+	<option value = "1">PM</option>
+</select>
+
+<%= submit_tag("Add Meal") %>
+<% end %>

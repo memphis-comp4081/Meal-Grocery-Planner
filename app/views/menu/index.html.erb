@@ -1,0 +1,27 @@
+<h1>Today's Meals</h1>
+
+<% if @menu %>
+	<table>
+		<tr>
+			<th>Meal</th>
+			<th>Time</th>
+		</tr>
+
+		<% @menu.sort{|a,b| a.time <=> b.time}.each do |menu| %>
+		
+		<tr>
+			<td><%= menu.meal.name %></td>
+			<td><%= menu.time.strftime("%l:%M %P") %></td>
+		</tr>
+
+		<% end %>
+
+	</table>
+<% else %>
+<p> No meals for today!  Add some. </p>
+<% end %>
+
+<p>
+	<%= link_to "Add Meal to menu.", menu_add_path %>
+</p>
+

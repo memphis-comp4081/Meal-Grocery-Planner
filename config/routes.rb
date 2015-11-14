@@ -27,6 +27,15 @@ Rails.application.routes.draw do
   post 'pantry/:id/edit', to: 'pantry#update'
   put '/pantry/:id', to: 'pantry#update'
 
+  get 'meal_list', to: 'meal_list#index', as: 'meal_list'
+  post 'meal_list', to: 'meal_list#edit', as: 'meal_list_edit'
+  get 'meal_list/:id/delete', to: 'meal_list#delete', as: 'meal_list_delete'
+
+
+
+  get 'menu', to: 'menu#index', as: 'menu'
+  get 'menu/add', to: 'menu#add', as: 'menu_add'
+  post 'menu/add', to: 'menu#create'
 
 
 
