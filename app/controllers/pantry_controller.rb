@@ -17,9 +17,7 @@ class PantryController < ApplicationController
 		@user = current_user
 		@ingredient = Ingredient.find(params[:pantry][:ingredient_id])
 		if current_user.pantries.exists?(:ingredient_id => @ingredient)
-			# @pantry = current_user.pantries.where(:ingredient_id => @ingredient)
-			# @pantry.update(params.require(:pantry).permit(:quantity))
-			# @pantry.save!
+			flash[:alert] = "You already have this item in your pantry. Click update to updat the ammount!"	
 		else
 			@pantry = Pantry.new(params.require(:pantry).permit(:quantity))
 			@pantry.user = @user
