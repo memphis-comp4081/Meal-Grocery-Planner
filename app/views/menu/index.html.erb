@@ -1,7 +1,13 @@
-<h1>Today's Meals</h1>
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+	<h2>Today's Meals</h2>
+  </div>
+</div>	
 
 <% if @menu %>
-	<table>
+<div class="row">
+  <div class="col-md-12">
+	<table class="table table-striped">
 		<tr>
 			<th>Meal</th>
 			<th>Time</th>
@@ -17,11 +23,22 @@
 		<% end %>
 
 	</table>
+	</div>
+</div>	
 <% else %>
-<p> No meals for today!  Add some. </p>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+	<p> No meals for today!  Add some. </p>
+ </div>
+</div>	
+
 <% end %>
 
-<p>
-	<%= link_to "Add Meal to menu.", menu_add_path %>
-</p>
-
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+	<p>
+		<%= link_to "Add Meal to menu.", menu_add_path %>
+	</p>
+ </div>
+</div>	

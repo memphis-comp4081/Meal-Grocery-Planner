@@ -1,29 +1,47 @@
-<h1>Your Meals</h1>
+<div class="row">
+  <div class="col-md-12">
+	<h2>Your Meals</h2>
+  </div>
+</div>	
 
-<table>
-	<tr>
-		<th>Meal</th>
-		<th>Remove</th>
-	</tr>
+<div class="row">
+  <div class="col-md-12">
+	<table class="table table-striped">
+		<tr>
+			<th>Meal</th>
+			<th>Remove</th>
+		</tr>
 
-	<% @meal_list.each do |meal_list| %>
-	
-	<tr>
-		<td><%= meal_list.meal.name %></td>
-		<td><%= link_to "Remove Meal",meal_list_delete_path(meal_list.id) %></td>
-	</tr>
+		<% @meal_list.each do |meal_list| %>
+		
+		<tr>
+			<td><%= meal_list.meal.name %></td>
+			<td><%= link_to "Remove Meal",meal_list_delete_path(meal_list.id) %></td>
+		</tr>
 
-	<% end %>
+		<% end %>
 
-</table>
+	</table>
+  </div>
+</div>	
 
 <%= form_tag do %>
-<h2>Add meal to your list</h2>
+
+<div class="row">
+  <div class="col-md-12">
+	<h2>Add meal to your list</h2>
+  </div>
+</div>	
 <!-- NOTE: Right now this is pretty inneficient, we should implement a search funtion in the beta phase -->
-<select name = "new_meal">
-	<% @meals.each do |meal| %>
-		<option value = "<%= meal.id %>"><%= meal.name %></option>
-	<% end %>
-</select>
-<%= submit_tag("Add Meal") %>
+<div class="row">
+  <div class="col-md-12">
+	<select name = "new_meal">
+		<% @meals.each do |meal| %>
+			<option value = "<%= meal.id %>"><%= meal.name %></option>
+		<% end %>
+	</select>
+
+	<%= submit_tag("Add Meal") %>
+  </div>
+</div>	
 <% end %>
