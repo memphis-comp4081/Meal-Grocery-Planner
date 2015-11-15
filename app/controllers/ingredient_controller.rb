@@ -7,8 +7,12 @@ class IngredientController < ApplicationController
 
   def create
     @ingredient = Ingredient.new(params_ingredient)
-    @ingredient.save! 
-  	redirect_to pantry_url
+    if @ingredient.save
+      redirect_to pantry_url
+    else
+      flash[:alert] = "Please fill out the form completely!"
+      redirect_to ingredient_add_url
+    end
   end
 
   private
