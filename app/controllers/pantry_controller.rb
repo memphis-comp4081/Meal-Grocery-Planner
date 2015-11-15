@@ -17,7 +17,9 @@ class PantryController < ApplicationController
 		@user = current_user
 		@ingredient = Ingredient.find(params[:pantry][:ingredient_id])
 		if current_user.pantries.exists?(:ingredient_id => @ingredient)
-			redirect_to pantry_edit_path(@pantry), notice: @ingredient.description + ' already exists in your pantry. Please change the quantity here.'
+			@pantry = current_user.pantries.find_by(:ingredient_id => @ingredient)
+			flash[:notice] = @ingredient.description + ' already exists in your pantry. Please change the quantity here.'
+			redirect_to pantry_edit_path(@pantry) 
 		else
 			@pantry = Pantry.new(params.require(:pantry).permit(:quantity))
 			@pantry.user = @user
