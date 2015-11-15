@@ -1,6 +1,9 @@
 require 'date'
 class MenuController < ApplicationController
 
+	#added to require login before pantry is shown.
+	before_action :authenticate_user!
+
 	def index
 		begin
 			@menu =Menu.where('time Between "' +  DateTime.now().to_s(:db)+ '" AND "' + (DateTime.now()+1).to_s(:db)+'"').find_each
