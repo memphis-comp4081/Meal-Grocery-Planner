@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
 
+  get 'components_ingredient/add'
+
+  get 'components_ingredient/delete'
+
+  get 'component/index'
+
+  get 'component/add'
+
+  get 'component/edit'
+
+  get 'components/index'
+
+  get 'components/add'
+
+  get 'components/edit'
+
   devise_for :users
 
   # root to home for Devise, to possibly be changed later.

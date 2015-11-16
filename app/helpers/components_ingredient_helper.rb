@@ -1,0 +1,2 @@
+module ComponentsIngredientHelper
+end
