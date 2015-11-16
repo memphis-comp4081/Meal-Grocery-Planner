@@ -6,8 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# jonathan = User.create!(name: "Jonathan", email: "jwood5@memphis.edu", password: "password")
-# kevin = User.create!(name: "Kevin", email: "ktwnsnd5@memphis.edu", password: "nopenopenope")
+jonathan = User.create!(email: "jonathan@memphis.edu", password: "password",
+						password_confirmation: "password")
+kevin = User.create!(email: "kevin@memphis.edu", password: "password",
+					 password_confirmation: "password")
+cletus = User.create!(email: "cletus@memphis.edu", password: "password",
+						password_confirmation: "password")
+drew = User.create!(email: "drew@memphis.edu", password: "password",
+					 password_confirmation: "password")
+paul = User.create!(email: "paul@memphis.edu", password: "password",
+						password_confirmation: "password")
 
 beef = Ingredient.create!(description: "Ground Beef", unit_of_measure: "pound(s)")
 bun = Ingredient.create!(description: "Hamburger Bun(s)", unit_of_measure: "bun(s)")
@@ -36,3 +44,23 @@ p4 = Pantry.create!(quantity: 2)
 kevin.pantries.push(p4)
 kevin.save!
 tomato.pantries.push(p4)
+
+
+meal = Meal.create!(name: "Tasty Food", description: "A scrumptious meal with butter and cheese!")
+ml = MealList.create!()
+ml.meal = meal
+ml.save!
+drew.meal_lists.push(ml)
+drew.save!
+puts(drew.meal_lists[0].user_id)
+puts(drew.meal_lists[0].meal.name)
+
+menu = Menu.create(time: DateTime.current().middle_of_day(), meal:meal)
+menu = Menu.create(time: DateTime.now()+1, meal:meal)
+menu.save!
+drew.menus.push(menu)
+
+puts(drew.menus[0].time)
+puts(drew.menus[0].meal.name)
+
+

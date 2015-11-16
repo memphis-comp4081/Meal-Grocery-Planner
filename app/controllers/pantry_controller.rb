@@ -4,7 +4,7 @@ class PantryController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
-		@pantries = Pantry.all
+		@pantries = current_user.pantries
 	end
 
 	def add
@@ -14,13 +14,20 @@ class PantryController < ApplicationController
 	end
 
 	def create
-		@user = User.find(params[:pantry][:user_id])
+		@user = current_user
 		@ingredient = Ingredient.find(params[:pantry][:ingredient_id])
-		@pantry = Pantry.new(params.require(:pantry).permit(:quantity))
-		@pantry.user = @user
-		@pantry.ingredient = @ingredient
-		@pantry.save!
-		redirect_to pantry_url
+		if current_user.pantries.exists?(:ingredient_id => @ingredient)
+			@pantry = current_user.pantries.find_by(:ingredient_id => @ingredient)
+			flash[:notice] = @ingredient.description + ' already exists in your pantry. Please change the quantity here.'
+			redirect_to pantry_edit_path(@pantry) 
+		else
+			@pantry = Pantry.new(params.require(:pantry).permit(:quantity))
+			@pantry.user = @user
+			@pantry.ingredient = @ingredient
+			@pantry.save!
+			redirect_to pantry_url
+		end
+		
 	end
 
 	def edit
@@ -34,5 +41,10 @@ class PantryController < ApplicationController
 		@pantry.update(params.require(:pantry).permit(:quantity))
 		@pantry.save!
 		redirect_to pantry_url
+	end
+
+	def checkCurrentPantry
+		
+
 	end
 end

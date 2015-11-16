@@ -8,24 +8,51 @@
 </head>
 <body>
 
-	<!-- Sign out area -->
-<div class="container"> 
-	<% if user_signed_in? %>
-    <div class="row">
-      <div class="col-md-12">
-		    <%=button_to 'Sign out', destroy_user_session_path(), method: :delete%>
-	    </div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#meal_planner_links" aria-expanded="false">
+        <i class="glyphicon glyphicon-menu-down"></i>
+      </button>
+      <a class="navbar-brand" href="#">
+        Meal Grocery Planner
+      </a>
     </div>
-  <% end %>
-    
+    <div class="collapse navbar-collapse" id="meal_planner_links"> 
+      <ul class="nav navbar-nav">
+      <% if not user_signed_in? %>
+        <li ><a href="#">Welcome</a></li>
+      <% end %>
+      <li><%=link_to 'My Menu', menu_path(), method: :get%></li>
+      <li><%=link_to 'My Meal List', meal_list_path(), method: :get%></li>
+      <li><%=link_to 'My Pantry', pantry_path(), method: :get%></li>
+      <% if user_signed_in? %>
+      <li><%=link_to 'Sign out', destroy_user_session_path(), method: :delete%></li>
+      <% end %>
+    </div>
+  </div>
+</nav>
+
 
 	<!-- Flash messages as requested/required by Devise -->
    	<% if flash[:notice] %>
-   		<p class="notice"><%=flash[:notice] %></p>
+    <div class="container"> 
+      <div class="row">
+        <div class="col-md-12">
+   		   <p class="alert alert-info"><%=flash[:notice] %></p>
+        </div>
+      </div>
+    </div>
    	<% end %>
 
    	<% if flash[:alert] %>
-   		<p class="alert"><%= flash[:alert] %></p>
+    <div class="container"> 
+      <div class="row">
+        <div class="col-md-12">
+   		   <p class="alert alert-danger"><%= flash[:alert] %></p>
+        </div>
+      </div>
+    </div>
    	<% end %>
 
 <%= yield %>

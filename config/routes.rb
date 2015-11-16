@@ -6,14 +6,16 @@ Rails.application.routes.draw do
   devise_scope :user do
     #authenticated is currently set to pantry to be changed later
     authenticated :user do
-      root 'pantry#index', as: :authenticated_root
+      root 'menu#index', as: :authenticated_root
     end
 
     unauthenticated do
       root 'devise/sessions#new', as: :unauthenticated_root
     end
   end
-  # get 'home', to: 'devise/sessions#new', as: 'home'
+
+  get 'ingredient/add', to: 'ingredient#add', as: 'ingredient_add'
+  post 'ingredient/add', to: 'ingredient#create'
 
   get 'pantry', to: 'pantry#index', as: 'pantry'
   get 'pantry/add', to: 'pantry#add', as: 'pantry_add'
@@ -24,6 +26,15 @@ Rails.application.routes.draw do
   post 'pantry/:id/edit', to: 'pantry#update'
   put '/pantry/:id', to: 'pantry#update'
 
+  get 'meal_list', to: 'meal_list#index', as: 'meal_list'
+  post 'meal_list', to: 'meal_list#edit', as: 'meal_list_edit'
+  get 'meal_list/:id/delete', to: 'meal_list#delete', as: 'meal_list_delete'
+
+
+
+  get 'menu', to: 'menu#index', as: 'menu'
+  get 'menu/add', to: 'menu#add', as: 'menu_add'
+  post 'menu/add', to: 'menu#create'
 
 
 
