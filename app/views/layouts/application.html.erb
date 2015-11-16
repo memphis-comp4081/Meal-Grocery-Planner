@@ -23,9 +23,9 @@
       <% if not user_signed_in? %>
         <li ><a href="#">Welcome</a></li>
       <% end %>
-      <li><%=link_to 'My Menu', menu_path(), method: :get%></li>
-      <li><%=link_to 'My Meal List', meal_list_path(), method: :get%></li>
-      <li><%=link_to 'My Pantry', pantry_path(), method: :get%></li>
+      <li class="<%= active_class(menu_path()) %>"><%=link_to 'My Menu', menu_path(), method: :get%><span class="sr-only">(current)</span></li>
+      <li class="<%= active_class(meal_list_path()) %>"><%=link_to 'My Meal List', meal_list_path(), method: :get%><span class="sr-only">(current)</span> </li>
+      <li class="<%= active_class(meal_list_path()) %>"><%=link_to 'My Pantry', pantry_path(), method: :get%><span class="sr-only">(current)</span> </li>
       <% if user_signed_in? %>
       <li><%=link_to 'Sign out', destroy_user_session_path(), method: :delete%></li>
       <% end %>
