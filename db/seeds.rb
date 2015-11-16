@@ -44,3 +44,23 @@ p4 = Pantry.create!(quantity: 2)
 kevin.pantries.push(p4)
 kevin.save!
 tomato.pantries.push(p4)
+
+
+meal = Meal.create!(name: "Tasty Food")
+ml = MealList.create!()
+ml.meal = meal
+ml.save!
+drew.meal_lists.push(ml)
+drew.save!
+puts(drew.meal_lists[0].user_id)
+puts(drew.meal_lists[0].meal.name)
+
+menu = Menu.create(time: DateTime.current().middle_of_day(), meal:meal)
+menu = Menu.create(time: DateTime.now()+1, meal:meal)
+menu.save!
+drew.menus.push(menu)
+
+puts(drew.menus[0].time)
+puts(drew.menus[0].meal.name)
+
+

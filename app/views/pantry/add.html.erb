@@ -1,21 +1,40 @@
-<h1>Add Item to Pantry</h1>
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+	<h1>Add Item to Pantry</h1>
+  </div>
+</div>	
 
 <%= form_for(:pantry) do |f| %>
 
-<p>
-<%= f.label :ingredient %>:
-<%= f.collection_select(:ingredient_id, @ingredients, :id, :description) %>
-</p>
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+	<p>
+	<%= f.label :ingredient %>:
+	<%= f.collection_select(:ingredient_id, @ingredients, :id, :description) %>
+	</p>
+  </div>
+</div>	
 
-<p>
-<%= f.label :quantity %>:
-<%= f.text_field :quantity %>
-</p>
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+	<p>
+	<%= f.label :quantity %>:
+	<%= f.text_field :quantity %>
+	</p>
+  </div>
+</div>
 
-<p>
-<%= f.submit %>
-</p>
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">	
+	<p>
+	<%= f.submit %>
+	</p>
+  </div>
+</div>	
 <% end %>
 
-<p></p>
-<%= button_to "Don't see your ingrident?", ingredient_add_path, method: :post %>
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+	<%= button_to "Don't see your ingredient?", ingredient_add_path, method: :get %>
+  </div>
+</div>	
