@@ -47,6 +47,7 @@ tomato.pantries.push(p4)
 
 
 meal = Meal.create!(name: "Tasty Food", description: "A scrumptious meal with butter and cheese!")
+meal.save!
 ml = MealList.create!()
 ml.meal = meal
 ml.save!

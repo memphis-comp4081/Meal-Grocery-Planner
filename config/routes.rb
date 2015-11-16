@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'meal/add'
+
+  get 'meal/edit'
+
   get 'components_ingredient/add'
 
   get 'components_ingredient/delete'
