@@ -4,7 +4,6 @@ class MealTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-<<<<<<< HEAD
 
   test "valid record" do
   	mealA = Meal.new
@@ -59,6 +58,4 @@ class MealTest < ActiveSupport::TestCase
   	assert mealA.valid?
   end
 
-=======
->>>>>>> a06c42ea39cc50ffbdc41c6df1efa04d8dccea72
 end

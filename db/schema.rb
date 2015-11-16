@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20151114011656) do
-=======
 ActiveRecord::Schema.define(version: 20151114012602) do
->>>>>>> a06c42ea39cc50ffbdc41c6df1efa04d8dccea72
 
   create_table "ingredients", force: :cascade do |t|
     t.string   "description"
@@ -24,14 +20,6 @@ ActiveRecord::Schema.define(version: 20151114012602) do
     t.datetime "updated_at",      null: false
   end
 
-<<<<<<< HEAD
-  create_table "meals", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "component_id"
-    t.string   "description"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-=======
   create_table "meal_lists", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "meal_id"
@@ -41,8 +29,9 @@ ActiveRecord::Schema.define(version: 20151114012602) do
 
   create_table "meals", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "menus", force: :cascade do |t|
@@ -51,7 +40,6 @@ ActiveRecord::Schema.define(version: 20151114012602) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
->>>>>>> a06c42ea39cc50ffbdc41c6df1efa04d8dccea72
   end
 
   create_table "pantries", force: :cascade do |t|
