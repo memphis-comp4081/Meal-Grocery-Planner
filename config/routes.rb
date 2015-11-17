@@ -50,6 +50,8 @@ Rails.application.routes.draw do
   post 'meal_list', to: 'meal_list#edit', as: 'meal_list_edit'
   get 'meal_list/:id/delete', to: 'meal_list#delete', as: 'meal_list_delete'
 
+  get 'meal/add', to: 'meal#add', as: 'meal_add'
+  post 'meal/add', to: 'meal#create'
 
 
   get 'menu', to: 'menu#index', as: 'menu'
