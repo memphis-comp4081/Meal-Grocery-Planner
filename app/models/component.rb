@@ -1,5 +1,5 @@
 class Component < ActiveRecord::Base
-	belongs_to :ingredient
+	has_many :componentsingredients
 
 	validates :description, presence: true
 	validates :instructions, presence: true

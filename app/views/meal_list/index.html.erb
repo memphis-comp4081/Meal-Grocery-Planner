@@ -17,7 +17,7 @@
 		
 		<tr>
 			<td><%= meal_list.meal.name %></td>
-			<td><%= link_to "Remove Meal",meal_list_delete_path(meal_list.id) %></td>
+			<td><%= link_to "Remove Meal",meal_list_delete_path(meal_list.id), method: :delete %></td>
 		</tr>
 
 		<% end %>

@@ -1,2 +1,51 @@
-<h1>Component#edit</h1>
-<p>Find me in app/views/component/edit.html.erb</p>
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+	<h2>Edit Meal Component</h2>
+  </div>
+</div>	
+
+<%= form_for(@component) do |f| %>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+	<p>
+	<%= f.label :description %>:
+	<%= f.text_field :description %>
+	</p>
+  </div>
+</div>	
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+	<p>
+	<%= f.label :instructions %>:
+	<%= f.text_field :instructions %>
+	</p>
+  </div>
+</div>	
+
+<table class="table table-striped">
+	<tr>
+		<th>Ingredient</th>
+		<th></th>
+	</tr>
+
+	<% @comp_ingreds.each do |comp_ingred| %>
+	<tr>
+		<td><%= comp_ingred.ingredient.description %></td>
+		<td><%= link_to "Remove", components_ingredient_delete_path(comp_ingred, @component.id) %></td>
+	</tr>
+	<% end %>
+</table>
+
+<%= link_to "Add New Ingredient to Component", components_ingredient_add_path(params[:id]) %>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+	<p>
+	<%= f.submit %>
+	</p>
+  </div>
+</div>	
+
+<% end %>
