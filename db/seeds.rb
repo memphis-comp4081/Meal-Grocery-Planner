@@ -123,6 +123,12 @@ ml.meal = meal1
 ml.save!
 drew.meal_lists.push(ml)
 drew.save!
+
+ml1 = MealList.create!()
+ml1.meal = meal3
+ml1.save!
+cletus.meal_lists.push(ml1)
+cletus.save!
 # puts(drew.meal_lists[0].user_id)
 # puts(drew.meal_lists[0].meal.name)
 

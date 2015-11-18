@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-4 col-md-offset-5">
+  <div class="col-md-4 col-md-offset-4">
 	<h1>Add Item to Pantry</h1>
   </div>
 </div>	
@@ -7,7 +7,7 @@
 <%= form_for(:components_ingredient) do |f| %>
 
 <div class="row">
-  <div class="col-md-4 col-md-offset-5">
+  <div class="col-md-4 col-md-offset-4">
 	<p>
 	<%= f.label :ingredient %>:
 	<%= f.collection_select(:ingredient_id, @ingredients, :id, :description) %>
@@ -16,7 +16,7 @@
 </div>	
 
 <div class="row">
-  <div class="col-md-4 col-md-offset-5">	
+  <div class="col-md-4 col-md-offset-4">	
 	<p>
 	<%= f.submit %>
 	</p>

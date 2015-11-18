@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-4 col-md-offset-5">
+  <div class="col-md-4 col-md-offset-4">
 	<h2>Edit Pantry Item</h2>
   </div>
 </div>	
@@ -7,7 +7,7 @@
 <%= form_for(@pantry) do |f| %>
 
 <div class="row">
-  <div class="col-md-4 col-md-offset-5">
+  <div class="col-md-4 col-md-offset-4">
 	<p>
 	<%= f.label 'Ingredient' %>:
 	<%= @pantry.ingredient.description %>
@@ -16,7 +16,7 @@
 </div>	
 
 <div class="row">
-  <div class="col-md-4 col-md-offset-5">
+  <div class="col-md-4 col-md-offset-4">
 	<p>
 	<%= f.label :quantity %>:
 	<%= f.text_field :quantity %>
@@ -26,7 +26,7 @@
 </div>	
 
 <div class="row">
-  <div class="col-md-4 col-md-offset-5">
+  <div class="col-md-4 col-md-offset-4">
 	<p>
 	<%= f.submit %>
 	</p>
