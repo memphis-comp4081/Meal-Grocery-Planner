@@ -31,7 +31,7 @@ lime = Ingredient.create!(description: "Lime", unit_of_measure: "lime(s)")
 potato = Ingredient.create!(description: "Potato", unit_of_measure: "potato(es)")
 groundpork = Ingredient.create!(description: "Ground Pork", unit_of_measure: "pound(s)")
 lemmongrass = Ingredient.create!(description: "Lemmon Grass", unit_of_measure: "stalk(s)")
-greencurrypaste = Ingredient.create!(description: "Green Curry Paste", unit_of_measure: "table spoon(s)")
+greencurrypaste = Ingredient.create!(description: "Green Curry Paste", unit_of_measure: "tablespoon(s)")
 chknbreast = Ingredient.create!(description: "Chicken Breasts", unit_of_measure: "pound(s)")
 rice = Ingredient.create!(description: "Rice", unit_of_measure: "cup(s)")
 blackbeans = Ingredient.create!(description: "Black Beans", unit_of_measure: "cup(s)")
@@ -43,6 +43,12 @@ parsely = Ingredient.create!(description: "Parsely", unit_of_measure: "bunch(es)
 cilantro = Ingredient.create!(description: "Cilantro", unit_of_measure: "bunch(es)")
 lettuce = Ingredient.create!(description: "Leaf Lettue", unit_of_measure: "bunch(es)")
 chedderch = Ingredient.create!(description: "Cheddar Cheese", unit_of_measure: "slice(s)")
+bourbon = Ingredient.create!(description: "Bourbon", unit_of_measure: "ounce(s)")
+bambooshoots = Ingredient.create!(description: "Bamboo Shoots", unit_of_measure: "ounce(s)")
+kaffirlimeleaves = Ingredient.create!(description: "Kaffir Lime Leaves", unit_of_measure: "leaf(ves)")
+redchilies = Ingredient.create!(description: "Red Chilies", unit_of_measure: "pepper(s)")
+palmsugar = Ingredient.create!(description: "Palm Sugar", unit_of_measure: "tablespoons(s)")
+fishsauce = Ingredient.create!(description: "Fish Sauce", unit_of_measure: "tablespoons(s)")
 
 p1 = Pantry.create!(quantity: 1.5)
 jonathan.pantries.push(p1)
@@ -67,9 +73,32 @@ kevin.pantries.push(p4)
 kevin.save!
 tomato.pantries.push(p4)
 
+feijoada = Component.create!(description: "Feijoada",
+		instructions: "Soak beans overnight. In large pan heat oil. Add garlic and half of the onions saute till fragrant. Add salted pork cook until brown. Add rinsed beans, linguica, the rest of the onion, bayleaves, cover with water, and salt and pepper to taste. Bring to boil and then simmer for at least 2 hours. Severed with scallions and parsely.")
 
-meal1 = Meal.create!(name: "Hamburger and Fries", description: "A scrumptious meal with butter and cheese!")
+martinburg = Component.create!(description: "Martin Burgers",
+		instructions: "Heat a heavy frying pan and sprinkle bottom lightly with table salt. Mix meat, handling lightly, just enough to form into four patties. Grill over medium-high heat about 4 minutes on each side. Pour chilled bourbon in chilled shot glass and serve meat and bourbon on a TV tray.")
+
+thaigreen = Component.create!(description: "Thai Green Curry",
+		instructions: "Heat up a pot over medium heat and add the oil. Saute the green curry paste until aromatic, add the chicken and stir to combine well with the curry paste. Add the coconut milk and water and bring it to a quick boil. Add the bamboo shoots, kaffir lime leaves, and red chilies. Lower the heat to simmer, cover the pot and let simmer for 10 minutes or until the curry slightly thickens. Add the fish sauce, sugar, and basil leaves. Stir to mix well.")
+
+icF = ComponentsIngredient.create!()
+icF.ingredient.push(blackbeans, garlic, onion,parsely, scallion, linguica, saltpork, bayleaf)
+# blackbeans.components_ingredients.push(icF)
+# blackbeans.save!
+icF.save!
+
+feijoada.components_ingredients.push(icF)
+feijoada.save!
+
+
+meal1 = Meal.create!(name: "Hamburger and Fries", description: "An all American favorite.")
 meal1.save!
+meal2 = Meal.create!(name: "Feijoada and Rice", description: "A Brasilian traditional dish severd with rice.")
+meal2.save!
+meal3 = Meal.create!(name: "Thai Green Curry and Rice", description: "A Thai Green Curry with rice served for special occasions.")
+meal3.save!
+
 
 
 ml = MealList.create!()
@@ -77,15 +106,15 @@ ml.meal = meal1
 ml.save!
 drew.meal_lists.push(ml)
 drew.save!
-puts(drew.meal_lists[0].user_id)
-puts(drew.meal_lists[0].meal.name)
+# puts(drew.meal_lists[0].user_id)
+# puts(drew.meal_lists[0].meal.name)
 
 menu = Menu.create(time: DateTime.current().middle_of_day(), meal:meal1)
 menu = Menu.create(time: DateTime.now()+1, meal:meal1)
 menu.save!
 drew.menus.push(menu)
 
-puts(drew.menus[0].time)
-puts(drew.menus[0].meal.name)
+# puts(drew.menus[0].time)
+# puts(drew.menus[0].meal.name)
 
 

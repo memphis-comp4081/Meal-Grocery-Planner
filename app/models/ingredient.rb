@@ -1,6 +1,6 @@
 class Ingredient < ActiveRecord::Base
 	has_many :pantries
-	has_many :components_ingredients
+	belongs_to :components_ingredients
 
 	validates :description, presence: true, length: { 
 		within: 0..50,
