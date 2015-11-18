@@ -109,8 +109,7 @@ meal1 = Meal.create!(name: "Hamburger and Fries", description: "An all American 
 meal1.components.push(martinburg)
 meal1.save!
 meal2 = Meal.create!(name: "Feijoada and Rice", description: "A Brasilian traditional dish severd with rice.")
-meal2.components.push(feijoada)
-meal2.components.push(ricecom)
+meal2.components.push(feijoada, ricecom)
 meal2.save!
 meal3 = Meal.create!(name: "Thai Green Curry and Rice", description: "A Thai Green Curry with rice served for special occasions.")
 meal3.components.push(thaigreen)

@@ -2,9 +2,10 @@ class MealController < ApplicationController
   before_action :authenticate_user!
 
   def index
+  	@meal = Meal.all
   end
 
-  def new
+  def add
   	@meal = Meal.new
   	@components = Component.all
   end
@@ -13,6 +14,7 @@ class MealController < ApplicationController
   def create
   	# @componentsingredient = componentsingredient
     @meal = Meal.new(params_meal)
+    @meal.components.push()
     if @meal.save
       redirect_to meal_list_url
     else
