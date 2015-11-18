@@ -83,10 +83,20 @@ thaigreen = Component.create!(description: "Thai Green Curry",
 		instructions: "Heat up a pot over medium heat and add the oil. Saute the green curry paste until aromatic, add the chicken and stir to combine well with the curry paste. Add the coconut milk and water and bring it to a quick boil. Add the bamboo shoots, kaffir lime leaves, and red chilies. Lower the heat to simmer, cover the pot and let simmer for 10 minutes or until the curry slightly thickens. Add the fish sauce, sugar, and basil leaves. Stir to mix well.")
 
 icF = ComponentsIngredient.create!()
-icF.ingredient.push(blackbeans, garlic, onion,parsely, scallion, linguica, saltpork, bayleaf)
-# blackbeans.components_ingredients.push(icF)
-# blackbeans.save!
-icF.save!
+
+blackbeans.components_ingredients.push(icF)
+blackbeans.save!
+linguica.components_ingredients.push(icF)
+linguica.save!
+bayleaf.components_ingredients.push(icF)
+bayleaf.save!
+saltpork.components_ingredients.push(icF)
+saltpork.save!
+scallion.components_ingredients.push(icF)
+scallion.save!
+parsely.components_ingredients.push(icF)
+parsely.save!
+
 
 feijoada.components_ingredients.push(icF)
 feijoada.save!
@@ -109,17 +119,17 @@ drew.save!
 # puts(drew.meal_lists[0].user_id)
 # puts(drew.meal_lists[0].meal.name)
 
-menu = Menu.create(time: DateTime.current().middle_of_day(), meal:meal1)
-menu = Menu.create(time: DateTime.now()+1, meal:meal1)
-menu.save!
-drew.menus.push(menu)
+# menu = Menu.create(time: DateTime.current().middle_of_day(), meal:meal1)
+# menu = Menu.create(time: DateTime.now()+1, meal:meal1)
+# menu.save!
+# drew.menus.push(menu)
 
 # puts(drew.menus[0].time)
 # puts(drew.menus[0].meal.name)
 
-menu = Menu.create(time: DateTime.now()+1, meal:meal)
-menu.save!
-drew.menus.push(menu)
+# menu = Menu.create(time: DateTime.now()+1, meal:meal)
+# menu.save!
+# drew.menus.push(menu)
 
 
 # meal2 = Meal.create!(name: "Burgers and Fries", description: "A Hamburger and fries.")

@@ -1,4 +1,4 @@
 class ComponentsIngredient < ActiveRecord::Base
 	belongs_to :component
-	has_many :ingredient
+	belongs_to :ingredient
 end
