@@ -1,16 +1,24 @@
 class MealController < ApplicationController
+  before_action :authenticate_user!
+
+  def index
+  end
+
   def new
-  	@meal = Meal.new
+  	@meals = Meal.new
+  	@components = Component.all
   end
 
 
   def create
+  	@components = Component.all
+  	# @component = Component.find(params[:component][:component_id])
     @meal = Meal.new(params_meal)
     if @meal.save
-      redirect_to pantry_url
+      redirect_to meal_list_url
     else
       flash[:alert] = "Please fill out the form completely!"
-      redirect_to ingredient_add_url
+      redirect_to meal_add_url
     end
   end
 
@@ -19,7 +27,7 @@ class MealController < ApplicationController
 
   private
 
-  def params_mean
+  def params_meal
 	  params.require(:meal).permit(
 	    :name,
 	    :description

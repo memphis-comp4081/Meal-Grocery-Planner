@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116211301) do
+ActiveRecord::Schema.define(version: 20151118070811) do
 
   create_table "components", force: :cascade do |t|
     t.string   "description"
     t.string   "instructions"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "meal_id"
   end
+
+  add_index "components", ["meal_id"], name: "index_components_on_meal_id"
 
   create_table "components_ingredients", force: :cascade do |t|
     t.datetime "created_at",    null: false

@@ -82,6 +82,9 @@ martinburg = Component.create!(description: "Martin Burgers",
 thaigreen = Component.create!(description: "Thai Green Curry",
 		instructions: "Heat up a pot over medium heat and add the oil. Saute the green curry paste until aromatic, add the chicken and stir to combine well with the curry paste. Add the coconut milk and water and bring it to a quick boil. Add the bamboo shoots, kaffir lime leaves, and red chilies. Lower the heat to simmer, cover the pot and let simmer for 10 minutes or until the curry slightly thickens. Add the fish sauce, sugar, and basil leaves. Stir to mix well.")
 
+ricecom = Component.create!(description: "Simple Rice",
+		instructions: "Add rice, water, salt, boil. Simple.")
+
 icF = ComponentsIngredient.create!()
 
 blackbeans.components_ingredients.push(icF)
@@ -103,10 +106,15 @@ feijoada.save!
 
 
 meal1 = Meal.create!(name: "Hamburger and Fries", description: "An all American favorite.")
+meal1.components.push(martinburg)
 meal1.save!
 meal2 = Meal.create!(name: "Feijoada and Rice", description: "A Brasilian traditional dish severd with rice.")
+meal2.components.push(feijoada)
+meal2.components.push(ricecom)
 meal2.save!
 meal3 = Meal.create!(name: "Thai Green Curry and Rice", description: "A Thai Green Curry with rice served for special occasions.")
+meal3.components.push(thaigreen)
+meal3.components.push(ricecom)
 meal3.save!
 
 
