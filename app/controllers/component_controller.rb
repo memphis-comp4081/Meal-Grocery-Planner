@@ -9,12 +9,18 @@ class ComponentController < ApplicationController
 
   def add
 	@component = Component.new
+	@ingredients = Ingredient.all
   end
 
   def create
-	@component = Component.new(params.require(:component).permit(:description, :instructions))
-	@component.save!
-	redirect_to component_edit_url(@component.id)
+  	@component = Component.new(params.require(:component).permit(:description, :instructions))
+	
+	if @component.save
+		redirect_to component_edit_url(@component.id)
+	else
+      flash[:alert] = "Please fill out the form completely!"
+      redirect_to component_add_url
+    end
   end
 
   def edit

@@ -2,6 +2,10 @@ class IngredientController < ApplicationController
 
 	#added to require login before pantry is shown.
 	before_action :authenticate_user!
+  def 
+    @ingredients = Ingredient.all
+  end 
+
 
   def new
   	@ingredient = Ingredient.new

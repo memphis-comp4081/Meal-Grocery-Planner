@@ -5,14 +5,13 @@ class MealController < ApplicationController
   end
 
   def new
-  	@meals = Meal.new
+  	@meal = Meal.new
   	@components = Component.all
   end
 
 
   def create
-  	@components = Component.all
-  	# @component = Component.find(params[:component][:component_id])
+  	# @componentsingredient = componentsingredient
     @meal = Meal.new(params_meal)
     if @meal.save
       redirect_to meal_list_url
