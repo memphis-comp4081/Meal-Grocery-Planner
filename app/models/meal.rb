@@ -1,5 +1,4 @@
 class Meal < ActiveRecord::Base
-
 	has_many :components
 	belongs_to :menu
 	belongs_to :meal_lists

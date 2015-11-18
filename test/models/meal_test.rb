@@ -57,5 +57,4 @@ class MealTest < ActiveSupport::TestCase
   	mealA.component_id = "onetwothreefourfive"
   	assert mealA.valid?
   end
-
 end

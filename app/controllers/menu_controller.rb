@@ -6,7 +6,7 @@ class MenuController < ApplicationController
 
 	def index
 		begin
-			@menu =Menu.where('time Between "' +  DateTime.now().to_s(:db)+ '" AND "' + (DateTime.now()+1).to_s(:db)+'"').find_each
+			@menu =current_user.menus.where('time Between "' +  DateTime.now().to_s(:db)+ '" AND "' + (DateTime.now()+1).to_s(:db)+'"').find_each
 		rescue
 			@menu = false
 		end
@@ -23,8 +23,6 @@ class MenuController < ApplicationController
 	end
 
 	def create
-		puts("create params")
-		puts(params)
 		if(params[:date]=~/\d?\d\/\d?\d\/\d\d/)
 			date = DateTime.strptime(params[:date], '%m/%d/%y')
 		else
