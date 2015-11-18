@@ -14,7 +14,7 @@ class MealController < ApplicationController
   def create
   	# @componentsingredient = componentsingredient
     @meal = Meal.new(params_meal)
-    @meal.components.push()
+    @meal.components.push(@component)
     if @meal.save
       redirect_to meal_list_url
     else
