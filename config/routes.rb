@@ -47,6 +47,9 @@ Rails.application.routes.draw do
   get 'components_ingredient/:id/add', to: 'components_ingredient#add', as: 'components_ingredient_add'
   post 'components_ingredient/:id/add', to: 'components_ingredient#create'
   get 'components_ingredient/:id/:comp_id/delete', to: 'components_ingredient#delete', as: 'components_ingredient_delete'
+  
+  get 'meal/add', to: 'meal#add', as: 'meal_add'
+  post 'meal/add', to: 'meal#create'
 
   get 'menu', to: 'menu#index', as: 'menu'
   get 'menu/add', to: 'menu#add', as: 'menu_add'
