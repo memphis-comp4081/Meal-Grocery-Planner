@@ -52,15 +52,20 @@ ml.meal = meal
 ml.save!
 drew.meal_lists.push(ml)
 drew.save!
-puts(drew.meal_lists[0].user_id)
-puts(drew.meal_lists[0].meal.name)
 
-menu = Menu.create(time: DateTime.current().middle_of_day(), meal:meal)
 menu = Menu.create(time: DateTime.now()+1, meal:meal)
 menu.save!
 drew.menus.push(menu)
 
-puts(drew.menus[0].time)
-puts(drew.menus[0].meal.name)
 
+meal2 = Meal.create!(name: "Burgers and Fries", description: "A Hamburger and fries.")
+m2 = MealList.create!()
+m2.meal = meal
+m2.save!
+kevin.meal_lists.push(m2)
+kevin.save!
+
+menu2 = Menu.create(time: DateTime.now()+1, meal:meal)
+menu2.save!
+kevin.menus.push(menu2)
 
