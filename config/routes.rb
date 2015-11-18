@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'meal/add'
-
-  get 'meal/edit'
-
   devise_for :users
 
   # root to home for Devise, to possibly be changed later.
