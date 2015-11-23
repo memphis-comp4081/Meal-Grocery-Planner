@@ -2,7 +2,6 @@
 
 one:
   name: MyString
-<<<<<<< HEAD
   component_id: 1
   description: MyString
 
@@ -10,8 +9,4 @@ two:
   name: MyString
   component_id: 1
   description: MyString
-=======
 
-two:
-  name: MyString
->>>>>>> a06c42ea39cc50ffbdc41c6df1efa04d8dccea72

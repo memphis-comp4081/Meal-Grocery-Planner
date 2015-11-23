@@ -1,25 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'meal/add'
-
-  get 'meal/edit'
-
-  get 'components_ingredient/add'
-
-  get 'components_ingredient/delete'
-
-  get 'component/index'
-
-  get 'component/add'
-
-  get 'component/edit'
-
-  get 'components/index'
-
-  get 'components/add'
-
-  get 'components/edit'
-
   devise_for :users
 
   # root to home for Devise, to possibly be changed later.
@@ -50,9 +30,23 @@ Rails.application.routes.draw do
   post 'meal_list', to: 'meal_list#edit', as: 'meal_list_edit'
   get 'meal_list/:id/delete', to: 'meal_list#delete', as: 'meal_list_delete'
 
+  #component routes
+  get 'component', to: 'component#index', as: 'component'
+  get 'component/add', to: 'component#add', as: 'component_add'
+  post 'component/add', to: 'component#create'
+  get 'component/:id/edit', to: 'component#edit', as: 'component_edit'
+  patch '/component.:id', to: 'component#update'
+  post 'component/:id/edit', to: 'component#update'
+  put '/component/:id', to: 'component#update'
+
+  #components_ingredient routes
+  get 'components_ingredient/:id/add', to: 'components_ingredient#add', as: 'components_ingredient_add'
+  post 'components_ingredient/:id/add', to: 'components_ingredient#create'
+  get 'components_ingredient/:id/:comp_id/delete', to: 'components_ingredient#delete', as: 'components_ingredient_delete'
+  
+  get 'meal', to: 'meal#index', as: 'meal'
   get 'meal/add', to: 'meal#add', as: 'meal_add'
   post 'meal/add', to: 'meal#create'
-
 
   get 'menu', to: 'menu#index', as: 'menu'
   get 'menu/add', to: 'menu#add', as: 'menu_add'
