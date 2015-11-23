@@ -58,3 +58,4 @@ class MealTest < ActiveSupport::TestCase
   	assert mealA.valid?
   end
 end
+
