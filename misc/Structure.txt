@@ -3,9 +3,14 @@ Ingredient: an item that may be combined with others to make a meal item
 	Unit Of Measure		string		(i.e. "lb.")
 	
 Component: a part of a meal (entree, side item, etc.)
-	Ingredient ID 		int 		(i.e. 1)				FK: Ingredient.id
+	Meal ID 			int 		(i.e. 1)				FK: Meal.id
+	ComponentsIngredientsID int 	(i.e. 1)				FK: ComponentsIngredientsID.id
 	Description			string		(i.e. "Hamburger")
 	Instructions		string		(i.e. "Form the ground beef into patties. Place patties on the grill until juices rise to the top. Flip the patties and let cook until juices rise to the top.")
+
+ComponentsIngredients: a way to track components and ingredients
+	Ingredient ID 		int 		(i.e. 1)				FK: Ingredient.id
+	Componet ID 		int 		(i.e. 1)				FK: Componet.id
 
 Pantry: a list of ingredients that a user has on hand
 	Ingredient ID		int			(i.e. 1)				FK: Ingredient.IngredientID
@@ -36,9 +41,10 @@ User:  The person using the app
 
 
 Schema:
-Ingredient 	(many)====>(many) Component
+Ingredient 	(one)====>(many) ComponentIngredients
 Pantry	 	(one)====>(one) Ingrendient
 Component	(many)====>(many) Meal
+Component	(one)====>(one) ComponentIngredients
 Menu		(one)====>(many) Meal
 User  		(one)====>(one) Pantry
 User   		(one)=====>(one)MealList
