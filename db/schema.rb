@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118070811) do
+ActiveRecord::Schema.define(version: 20151125203701) do
 
   create_table "components", force: :cascade do |t|
     t.string   "description"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20151118070811) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "meal_id"
+    t.string   "image"
   end
 
   add_index "components", ["meal_id"], name: "index_components_on_meal_id"
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 20151118070811) do
     t.string   "unit_of_measure"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "image"
   end
 
   create_table "meal_lists", force: :cascade do |t|
@@ -52,6 +54,7 @@ ActiveRecord::Schema.define(version: 20151118070811) do
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "image"
   end
 
   create_table "menus", force: :cascade do |t|

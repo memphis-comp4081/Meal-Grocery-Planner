@@ -1,4 +1,5 @@
 class Component < ActiveRecord::Base
+	mount_uploader :image, ImageUploader
 	has_many :components_ingredients
 	belongs_to :meal
 
