@@ -24,8 +24,13 @@ class PantryController < ApplicationController
 			@pantry = Pantry.new(params.require(:pantry).permit(:quantity))
 			@pantry.user = @user
 			@pantry.ingredient = @ingredient
-			@pantry.save!
-			redirect_to pantry_url
+			begin
+				@pantry.save!
+				redirect_to pantry_url
+			rescue Exception
+				flash[:notice] = "There was an issue saving your pantry."
+				redirect_to pantry_add_path()
+			end
 		end
 		
 	end
