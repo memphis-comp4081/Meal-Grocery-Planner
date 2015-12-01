@@ -47,6 +47,10 @@ Rails.application.routes.draw do
   get 'meal', to: 'meal#index', as: 'meal'
   get 'meal/add', to: 'meal#add', as: 'meal_add'
   post 'meal/add', to: 'meal#create'
+  get 'meal/:id/edit', to: 'meal#edit', as: 'meal_edit'
+  patch '/meal.:id', to: 'meal#update'
+  post 'meal/:id/edit', to: 'meal#update'
+  get 'meal/:id/delete', to: 'meal#delete', as:'meal_delete'
 
   get 'menu', to: 'menu#index', as: 'menu'
   get 'menu/add', to: 'menu#add', as: 'menu_add'

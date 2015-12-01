@@ -9,14 +9,14 @@
 	<table class="table table-striped">
 		<tr>
 			<th>Meal</th>
-			<th>Remove</th>
+			<th>Edit/Remove</th>
 		</tr>
 
 		<% @meal_list.each do |meal_list| %>
 		
 		<tr>
 			<td><%= meal_list.meal.name %></td>
-			<td><%= link_to "Remove Meal",meal_list_delete_path(meal_list.id), method: :delete %></td>
+			<td>[<%= link_to "Edit",meal_edit_path(meal_list.meal.id), method: :get %>]&nbsp[<%= link_to "Remove",meal_list_delete_path(meal_list.id), method: :delete %>]</td>
 		</tr>
 
 		<% end %>

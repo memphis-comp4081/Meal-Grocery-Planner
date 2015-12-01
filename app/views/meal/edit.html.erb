@@ -1,2 +1,69 @@
-<h1>Meal#edit</h1>
-<p>Find me in app/views/meal/edit.html.erb</p>
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+	<h2>Edit Meal</h2>
+  </div>
+</div>	
+
+<%= form_for(@meal, html: { multipart: true }) do |f| %>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+	<p>
+	<%= f.label :name %>:
+	<%= f.text_field :name %>
+	</p>
+  </div>
+</div>	
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+	<p>
+	<%= f.label :description %>:
+	<%= f.text_field :description %>
+	</p>
+  </div>
+</div>	
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+	<p>
+	<%= f.label("Image (Optional)") %>:
+	<%= f.file_field :image %>
+	</p>
+  </div>
+</div>	
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+	<p>
+	<%= select_tag :component_id, options_from_collection_for_select(@components, :id, :description, params[:component_id]), include_blank: true, class: "form-control" %>
+	</p>
+	 <%= button_to "update", meal_edit_path(@meal) %>
+  </div>
+</div>
+
+<table class="table table-striped">
+	<tr>
+		<th>Dish</th>
+		<th>Remove Dish</th>
+	</tr>
+
+	<% @meal.components.each do |meal_component| %>
+	<tr>
+		<td><%= meal_component.description %></td>
+		<td>[<%=link_to "remove", meal_delete_path(component_id: meal_component.id, id: @meal.id) %>]</td>
+	</tr>
+
+
+	<% end %>
+</table>
+
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+	<p>
+	<%= button_to "Submit", meal_list_path(), method: :get %>
+	<%= f.submit "Save Meal" %>
+	</p>
+  </div>
+</div>	
+
+<% end %>
