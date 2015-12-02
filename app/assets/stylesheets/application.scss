@@ -14,3 +14,163 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+body {
+	
+	width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #000;
+    background-color:#FAC05E;	
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+@media(min-width:450px) {
+    tr{
+    	margin: 0 0 35px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #BE4E00;
+    }
+    p {
+        margin: 0 0 35px;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    .lettuce-area{
+		background-color: #8AC302;
+	    height: 100%;
+	    margin: 0 10px;
+	    padding: 10px 10px 0;
+	}
+    .cheese-area{
+		background-color: #F79C06;
+	    height: 100%;
+	    margin: 0 10px;
+	    padding: 10px 10px 0;
+	}
+	.burger-area{
+		background-color: #76320D;
+	    height: 100%;
+	    margin: 0 10px;
+	    padding: 10px 10px 0;
+	}
+	.bun-area{
+		background-color: #FAC05E;
+	    height: 100%;
+	    margin: 0 10px;
+	    padding: 0 10px;
+	}
+	.full-height-width{
+		height: 100%;
+		width: 100%;
+		padding: 0;
+		margin-top: -50px;
+	}
+	.excess-margin{
+		margin-bottom: 50px;
+	}
+	.no-margin{
+		margin: 0;
+	}
+}
+
+@media(max-width: 449px){
+	.lettuce-area{
+		background-color: #8AC302;
+	    height: 100%;
+	    margin: 0 5px;
+	    padding: 5px 5px 0;
+	}
+	.cheese-area{
+		background-color: #F79C06;
+	    height: 100%;
+	    margin: 0 5px;
+	    padding: 5px 5px 0;
+	}
+	.burger-area{
+		background-color: #76320D;
+	    height: 100%;
+	    margin: 0 5px;
+	    padding:  5px 5px 0;
+	}
+	.bun-area{
+		background-color: #FAC05E;
+	    height: 100%;
+	    margin: 0 5px;
+	    padding: 0 5px;
+	}
+}
+
+a {
+    color: #8AC302;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	text-align: center;
+}
+
+#landing-back{
+	background: url('/assets/DSC_0152-Version-2.jpg') left top no-repeat; 
+
+	height: 100%;
+	width: 100%;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.centered-item{
+	margin: 0, auto;
+	display: block;
+	text-align: center;
+}
+
+.centered-item-inline{
+	margin: 0 auto;
+	display: inline-block;
+
+	text-align: center;
+}
+
+.picture-box {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    max-width: 650px;
+}
+
+.navbar-custom {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #76320D;
+}
+.content-row{
+
+}
+.well-area{
+	align-items:center;
+	margin-top: 15%;
+  	vertical-align: middle;
+  	display: block;
+	background-color: #76320D;
+	margin: 0, auto;
+	float: none;
+	max-width: 350px;
+	height:auto;
+}

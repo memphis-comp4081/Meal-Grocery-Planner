@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-custom">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#meal_planner_links" aria-expanded="false">
@@ -32,33 +32,43 @@
         <li><%=link_to 'Sign out', destroy_user_session_path(), method: :delete%></li>
       <% end %>
     </div>
+  
   </div>
 </nav>
 
-
-	<!-- Flash messages as requested/required by Devise -->
-   	<% if flash[:notice] %>
-    <div class="container"> 
-      <div class="row">
-        <div class="col-md-12">
-   		   <p class="alert alert-info"><%=flash[:notice] %></p>
-        </div>
+<!-- Flash messages as requested/required by Devise -->
+ 	<% if flash[:notice] %>
+  <div class="container-fluid excess-margin"> 
+    <div class="row">
+      <div class="col-md-12">
+ 		   <p class="alert alert-info"><%=flash[:notice] %></p>
       </div>
     </div>
-   	<% end %>
+  </div>
+ 	<% end %>
 
-   	<% if flash[:alert] %>
-    <div class="container"> 
-      <div class="row">
-        <div class="col-md-12">
-   		   <p class="alert alert-danger"><%= flash[:alert] %></p>
-        </div>
+ 	<% if flash[:alert] %>
+  <div class="container-fluid excess-margin"> 
+    <div class="row">
+      <div class="col-md-12">
+ 		   <p class="alert alert-danger"><%= flash[:alert] %></p>
       </div>
     </div>
-   	<% end %>
+  </div>
+ 	<% end %>
 
-<%= yield %>
-</div>
+<!-- <div class="lettuce-area">
+  <div class="cheese-area">
+    <div class="burger-area">
+      <div class="bun-area"> -->
+
+          <%= yield %>
+
+<!--       </div>
+    </div>
+  </div>
+</div> -->
+
 </body>
 </html>
 
