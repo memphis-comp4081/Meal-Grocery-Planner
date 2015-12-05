@@ -20,6 +20,22 @@ class MenuController < ApplicationController
 	def add
 		@meal_list = current_user.meal_lists
 		@menu = Menu.new
+		@sql = "SELECT
+					m.ID,
+					m.Name
+				FROM 
+					Meals m
+					INNER JOIN Meal_Lists ml on m.ID = ml.Meal_ID
+					INNER JOIN Components_Meals cm on m.ID = cm.Meal_ID
+					INNER JOIN Components c on cm.Component_ID = c.ID	
+					INNER JOIN Components_Ingredients ci on c.ID = ci.Component_ID
+					INNER JOIN Ingredients i on ci.Ingredient_ID = i.ID
+					LEFT JOIN Pantries p on i.ID = p.Ingredient_ID
+				WHERE 
+					ml.User_ID = " + current_user.id.to_s + "
+					AND p.User_ID = " + current_user.id.to_s + "
+					AND p.id is not null"
+		@recommendations = ActiveRecord::Base.connection.execute(@sql)
 	end
 
 	def create
