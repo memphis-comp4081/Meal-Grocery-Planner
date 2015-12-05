@@ -33,9 +33,8 @@
 </div>	
 <div class="row">
   <div class="col-md-4 col-md-offset-4">
-	<p>
-	<%= select_tag :component_id, options_from_collection_for_select(@components, :id, :description, params[:component_id]), include_blank: true, class: "form-control" %>
-	</p>
+
+	<%= select_tag :component_id, options_from_collection_for_select(@components, :id, :description, params[:component_id]), include_blank: true, class: "select-two form-control" %>
 	 <%= button_to "update", meal_edit_path(@meal) %>
   </div>
 </div>
