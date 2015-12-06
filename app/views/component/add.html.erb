@@ -19,7 +19,9 @@
   <div class="col-md-4 col-md-offset-4">
 	<p>
 	<%= f.label :instructions %>:
-	<%= f.text_field :instructions %>
+	<textarea class = "form-control" rows = "5" id = "instructions">
+		<%= f.text_field :instructions %>:
+	</textarea>
 	</p>
   </div>
 </div>

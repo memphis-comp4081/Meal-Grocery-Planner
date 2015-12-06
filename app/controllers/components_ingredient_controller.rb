@@ -21,4 +21,9 @@ class ComponentsIngredientController < ApplicationController
 	ComponentsIngredient.delete(params[:id])
 	redirect_to component_edit_url(params[:comp_id])
   end
+
+  def index
+  	@comp_ingred = ComponentsIngredient.all
+  end
+
 end
