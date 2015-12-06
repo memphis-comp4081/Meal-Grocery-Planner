@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20151130154941) do
-=======
-ActiveRecord::Schema.define(version: 20151118070811) do
->>>>>>> 9753d6b4dee13ffd26efbe066a9b573cfe4b0600
 
   create_table "components", force: :cascade do |t|
     t.string   "description"
@@ -23,10 +19,7 @@ ActiveRecord::Schema.define(version: 20151118070811) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "meal_id"
-<<<<<<< HEAD
     t.string   "image"
-=======
->>>>>>> 9753d6b4dee13ffd26efbe066a9b573cfe4b0600
   end
 
   add_index "components", ["meal_id"], name: "index_components_on_meal_id"
@@ -41,23 +34,17 @@ ActiveRecord::Schema.define(version: 20151118070811) do
   add_index "components_ingredients", ["component_id"], name: "index_components_ingredients_on_component_id"
   add_index "components_ingredients", ["ingredient_id"], name: "index_components_ingredients_on_ingredient_id"
 
-<<<<<<< HEAD
   create_table "components_meals", id: false, force: :cascade do |t|
     t.integer "meal_id",      null: false
     t.integer "component_id", null: false
   end
 
-=======
->>>>>>> 9753d6b4dee13ffd26efbe066a9b573cfe4b0600
   create_table "ingredients", force: :cascade do |t|
     t.string   "description"
     t.string   "unit_of_measure"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-<<<<<<< HEAD
     t.string   "image"
-=======
->>>>>>> 9753d6b4dee13ffd26efbe066a9b573cfe4b0600
   end
 
   create_table "meal_lists", force: :cascade do |t|
@@ -69,14 +56,10 @@ ActiveRecord::Schema.define(version: 20151118070811) do
 
   create_table "meals", force: :cascade do |t|
     t.string   "name"
-    t.integer  "component_id"
     t.string   "description"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-<<<<<<< HEAD
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "image"
-=======
->>>>>>> 9753d6b4dee13ffd26efbe066a9b573cfe4b0600
   end
 
   create_table "menus", force: :cascade do |t|
