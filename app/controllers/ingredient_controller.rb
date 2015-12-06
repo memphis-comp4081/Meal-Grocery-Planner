@@ -27,7 +27,8 @@ class IngredientController < ApplicationController
   def params_ingredient
 	  params.require(:ingredient).permit(
 	    :description,
-	    :unit_of_measure
+	    :unit_of_measure,
+      :image
   	)
   end
 

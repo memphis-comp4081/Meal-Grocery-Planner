@@ -13,7 +13,7 @@ class ComponentController < ApplicationController
   end
 
   def create
-  	@component = Component.new(params.require(:component).permit(:description, :instructions))
+  	@component = Component.new(params.require(:component).permit(:description, :instructions, :image))
 	
 	if @component.save
 		redirect_to component_edit_url(@component.id)
@@ -30,7 +30,7 @@ class ComponentController < ApplicationController
 
   def update
 	@component = Component.find(params[:id])
-	@component.update(params.require(:component).permit(:description, :instructions))
+	@component.update(params.require(:component).permit(:description, :instructions, :image))
 	@component.save!
 	redirect_to component_url
   end

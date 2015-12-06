@@ -36,13 +36,12 @@ Menu: a planned time for a meal (basically just group date and what it's for, li
 User:  The person using the app
 	Name 			String 			(i.e. "John")
 	Email 			String 			(i.e. "John@email.com")
-	Password 		String 			(i.e. "p@55w0rd")
 
 
 
 Schema:
 Ingredient 	(one)====>(many) ComponentIngredients
-Pantry	 	(one)====>(one) Ingrendient
+Pantry	 	(one)====>(many) Ingrendient
 Component	(many)====>(many) Meal
 Component	(one)====>(one) ComponentIngredients
 Menu		(one)====>(many) Meal

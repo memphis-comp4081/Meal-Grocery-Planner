@@ -7,16 +7,15 @@ class MealController < ApplicationController
 
   def add
   	@meal = Meal.new
-  	@components = Component.all
+  	
   end
 
 
   def create
-  	# @componentsingredient = componentsingredient
     @meal = Meal.new(params_meal)
     # @meal.components.push(@component)
     if @meal.save
-      redirect_to meal_list_url
+      redirect_to meal_edit_url(@meal.id)
     else
       flash[:alert] = "Please fill out the form completely!"
       redirect_to meal_add_url
@@ -24,6 +23,25 @@ class MealController < ApplicationController
   end
 
   def edit
+    
+    @meal = Meal.find(params[:id])
+    @meal_components = @meal.components.where(:meal_id => params[:id])
+    @components = Component.all
+    
+  end
+
+  def update
+    @meal = Meal.find(params[:id])
+    @meal.components << Component.find(params[:component_id])
+    @meal.save!
+    redirect_to meal_edit_url(@meal.id)
+  end
+
+  def delete
+    @comp = Component.find(params[:component_id])
+    @meal = Meal.find(params[:id])
+    @meal.components.delete(@comp)
+    redirect_to meal_edit_url(@meal.id)
   end
 
   private
@@ -31,7 +49,8 @@ class MealController < ApplicationController
   def params_meal
 	  params.require(:meal).permit(
 	    :name,
-	    :description
+	    :description,
+      :image
   	)
   end
 end

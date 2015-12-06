@@ -21,7 +21,8 @@ class Meal < ActiveRecord::Base
 end
 =======
 class Meal < ActiveRecord::Base
-	has_many :components
+	mount_uploader :image, ImageUploader
+	has_and_belongs_to_many :components
 	belongs_to :menu
 	belongs_to :meal_lists
 
