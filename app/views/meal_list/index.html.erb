@@ -26,16 +26,16 @@
 </div>	
 
 <%= form_tag class:"form-inline" do %>
-<div class="form-group centered-item">
+<div class="form-group ">
 <div class="row">
   <div class="col-md-12">
 	<h2>Add meal to your list</h2>
   </div>
 </div>	
 <!-- NOTE: Right now this is pretty inneficient, we should implement a search funtion in the beta phase -->
-<div class="row">
-  <div class="col-md-12">
-	<select name = "new_meal" >
+<div class="row centered-item">
+  <div class="col-md-4 box_center">
+	<select name = "new_meal" class="select-two form-control">
 		<% @meals.each do |meal| %>
 			<option value = "<%= meal.id %>"><%= meal.name %></option>
 		<% end %>
