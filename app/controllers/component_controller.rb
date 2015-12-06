@@ -34,4 +34,10 @@ class ComponentController < ApplicationController
 	@component.save!
 	redirect_to component_url
   end
+
+  #cletus add the logic for the page here! it should be similar to the logic of the edit
+  #function
+  def detail
+
+  end
 end

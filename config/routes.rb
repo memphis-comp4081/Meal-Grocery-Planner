@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   patch '/component.:id', to: 'component#update'
   post 'component/:id/edit', to: 'component#update'
   put '/component/:id', to: 'component#update'
+  get 'component/:id/detail', to: 'component#detail', as: 'component_detail'
 
   #components_ingredient routes
   get 'components_ingredient/:id/add', to: 'components_ingredient#add', as: 'components_ingredient_add'
