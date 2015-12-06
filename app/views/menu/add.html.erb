@@ -12,11 +12,6 @@
 			<option value = "<%= menu.meal.id %>"><%= menu.meal.name %></option>
 		<% end %>
 	</select>
-	<select name = "recommendation_select">
-		<% @recommendations.each do |recommendation| %>
-			<option value = "<%= recommendation %>"><%= recommendation["name"] %></option>
-		<% end %>
-	</select>
   </div>
 </div>
 <div class="row">

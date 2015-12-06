@@ -55,6 +55,8 @@ Rails.application.routes.draw do
   get 'menu', to: 'menu#index', as: 'menu'
   get 'menu/add', to: 'menu#add', as: 'menu_add'
   post 'menu/add', to: 'menu#create'
+  get 'menu/rec', to: 'menu#rec', as: 'menu_rec'
+  post 'menu/rec', to: 'menu#create_rec'
 
 
 
