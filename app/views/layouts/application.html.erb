@@ -38,7 +38,7 @@
         <li class="<%= active_class(meal_list_path()) %>"><%=link_to 'Favorite Meals', meal_list_path(), method: :get%><span class="sr-only">(current)</span> </li>
         <li class="<%= active_class(component_path()) %>"><%=link_to 'Dishes', component_path(), method: :get%><span class="sr-only">(current)</span> </li>
         <li class="<%= active_class(pantry_path()) %>"><%=link_to 'My Pantry', pantry_path(), method: :get%><span class="sr-only">(current)</span> </li>
-
+        <li class="<%= active_class(info_path()) %>"><%=link_to 'User Info', info_path(), method: :get%><span class="sr-only">(current)</span> </li>
         <li><%=link_to 'Sign out', destroy_user_session_path(), method: :delete%></li>
       <% end %>
     </div>

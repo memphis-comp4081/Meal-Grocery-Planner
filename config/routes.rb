@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+ 
   devise_for :users
 
   # root to home for Devise, to possibly be changed later.
@@ -57,6 +58,12 @@ Rails.application.routes.draw do
   post 'menu/add', to: 'menu#create'
   get 'menu/rec', to: 'menu#rec', as: 'menu_rec'
   post 'menu/rec', to: 'menu#create_rec'
+
+  get 'data/index', to: 'data#index', as: 'info'
+
+  get 'data/edit', to: 'data#edit', as: 'info_edit'
+
+  get 'users/edit', to: 'users#edit', as: 'settings'
 
 
 

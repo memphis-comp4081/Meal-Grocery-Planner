@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :pantries
   has_many :meal_lists
+  has_many :data
   # to be changed based on the creation of other classes
   # has_one :meal_list
   has_many :menus
