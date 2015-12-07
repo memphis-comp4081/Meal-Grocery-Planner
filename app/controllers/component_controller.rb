@@ -38,7 +38,7 @@ class ComponentController < ApplicationController
   #cletus add the logic for the page here! it should be similar to the logic of the edit
   #function
   def detail
-    @component = Component.find(params[:id])
+    @component    = Component.find(params[:id])
     @comp_ingreds = ComponentsIngredient.where(:component_id => params[:id])
   end
 
