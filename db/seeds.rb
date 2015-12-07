@@ -71,7 +71,32 @@ chicken.save!
 p4 = Pantry.create!(quantity: 2)
 kevin.pantries.push(p4)
 kevin.save!
-tomato.pantries.push(p4)
+saltpork.pantries.push(p4)
+
+p5 = Pantry.create!(quantity: 2)
+kevin.pantries.push(p5)
+kevin.save!
+bayleaf.pantries.push(p5)
+
+p6 = Pantry.create!(quantity: 2)
+kevin.pantries.push(p6)
+kevin.save!
+linguica.pantries.push(p6)
+
+p7 = Pantry.create!(quantity: 2)
+kevin.pantries.push(p7)
+kevin.save!
+blackbeans.pantries.push(p7)
+
+p8 = Pantry.create!(quantity: 2)
+kevin.pantries.push(p8)
+kevin.save!
+parsely.pantries.push(p8)
+
+p9 = Pantry.create!(quantity: 2)
+kevin.pantries.push(p9)
+kevin.save!
+scallion.pantries.push(p9)
 
 feijoada = Component.create!(description: "Feijoada",
 		instructions: "Soak beans overnight. In large pan heat oil. Add garlic and half of the onions saute till fragrant. Add salted pork cook until brown. Add rinsed beans, linguica, the rest of the onion, bayleaves, cover with water, and salt and pepper to taste. Bring to boil and then simmer for at least 2 hours. Severed with scallions and parsely.")
@@ -129,6 +154,12 @@ ml1.meal = meal3
 ml1.save!
 cletus.meal_lists.push(ml1)
 cletus.save!
+
+ml2 = MealList.create!()
+ml2.meal = meal2
+ml2.save!
+kevin.meal_lists.push(ml2)
+kevin.save!
 # puts(drew.meal_lists[0].user_id)
 # puts(drew.meal_lists[0].meal.name)
 

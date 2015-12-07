@@ -1,61 +1,67 @@
-<%= form_tag do %>
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-	<P>My Favorite Meals:</p>
-  </div>
-</div>
+<div class="container-fluid full-height-width">
+	<div class="row well well-content-form">
+		<div class="col-md-12 ">
+		<%= form_tag do %>
+		<div class="row">
+		  <div class="col-md-12 centered-item">
+			<P>Recommended Meals:</p>
+		  </div>
+		</div>
 
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-	<select name = "recommendation_select">
-		<% @recommendations.each do |recommendation| %>
-			<option value = "<%= recommendation["id"] %>"><%= recommendation["name"] %></option>
+		<div class="row">
+		  <div class="col-md-12 centered-item">
+			<select class="select-two form-control" name = "recommendation_select">
+				<% @recommendations.each do |recommendation| %>
+					<option value = "<%= recommendation["id"] %>"><%= recommendation["name"] %></option>
+				<% end %>
+			</select>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="col-md-12 centered-item">
+			<%= link_to "Add Favorite Meals", meal_list_path(), method: :get %>
+		  </div>
+		</div>
+
+		<br>
+		<div class="row">
+		  <div class="col-md-12 centered-item">
+			<p>Date (MM/DD/YY)</p>
+		  </div>
+		</div>
+
+		<div class="row">
+		  <div class="col-md-12 centered-item">
+			<input type = "text" name = "date" class="input-text">
+		  </div>
+		</div>
+
+		<br>
+
+		<div class="row">
+		  <div class="col-md-12 centered-item">
+			<p>Time (hour:minute)</p>
+		  </div>
+		</div>
+
+		<div class="row">
+		  <div class="col-md-12 centered-item">
+			<input type="text" name="time" class="input-text">
+				<select name = "time_offset">
+				<option value = "0">AM</option>
+				<option value = "1">PM</option>
+			</select>
+		  </div>
+		</div>
+
+		<div class="row">
+		  <div class="col-md-12 centered-item">
+			<%= submit_tag("Add Meal") %>
+		  </div>
+		</div>
+
+
 		<% end %>
-	</select>
-  </div>
+	</div>
+	</div>
 </div>
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-	<%= link_to "Add Favorite Meals", meal_list_path(), method: :get %>
-  </div>
-</div>
-
-<br>
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-	<p>Date (MM/DD/YY)</p>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-	<input type = "text" name = "date">
-  </div>
-</div>
-
-<br>
-
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-	<p>Time (hour:minute)</p>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-	<input type="text" name="time">
-		<select name = "time_offset">
-		<option value = "0">AM</option>
-		<option value = "1">PM</option>
-	</select>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-	<%= submit_tag("Add Meal") %>
-  </div>
-</div>
-
-
-<% end %>
