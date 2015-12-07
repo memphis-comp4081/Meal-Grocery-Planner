@@ -1,47 +1,51 @@
 
-<div class="container-fluid">
-	<div class="row">
-	  <div class="col-md-12">
-		<h2>My Menu</h2>
-	  </div>
-	</div>	
+<div class="container-fluid full-height-width">
+	<div class="row well well-content">
+		<div class="col-md-12 ">
+			<div class="row">
+			  <div class="col-md-12">
+				<h2>My Menu</h2>
+			  </div>
+			</div>	
 
-	<% if @menu %>
-	<div class="row">
-	  <div class="col-md-12 centered-item">
-		<table class="table table-striped">
-			<tr>
-				<th>Meal</th>
-				<th>Time</th>
-			</tr>
+			<% if @menu %>
+			<div class="row">
+			  <div class="col-md-12 centered-item">
+				<table class="table table-striped">
+					<tr>
+						<th>Meal</th>
+						<th>Time</th>
+					</tr>
 
-			<% @menu.sort{|a,b| a.time <=> b.time}.each do |menu| %>
-			
-			<tr>
-				<td><%= menu.meal.name %></td>
-				<td><%= menu.time.strftime("%l:%M %P") %></td>
-			</tr>
+					<% @menu.sort{|a,b| a.time <=> b.time}.each do |menu| %>
+					
+					<tr>
+						<td><%= menu.meal.name %></td>
+						<td><%= menu.time.strftime("%l:%M %P") %></td>
+					</tr>
+
+					<% end %>
+
+				</table>
+				</div>
+			</div>	
+			<% else %>
+
+			<div class="row">
+			  <div class="col-md-12 centered-item">
+				<p> No meals for today!  Add some. </p>
+			 </div>
+			</div>	
 
 			<% end %>
 
-		</table>
+			<div class="row">
+			  <div class="col-md-12 centered-item">
+				<p>
+					<%= link_to "Add Meal to Menu", menu_add_path %>
+				</p>
+			 </div>
+			</div>
 		</div>
-	</div>	
-	<% else %>
-
-	<div class="row">
-	  <div class="col-md-12 centered-item">
-		<p> No meals for today!  Add some. </p>
-	 </div>
-	</div>	
-
-	<% end %>
-
-	<div class="row">
-	  <div class="col-md-12 centered-item">
-		<p>
-			<%= link_to "Add Meal to menu.", menu_add_path %>
-		</p>
-	 </div>
 	</div>
-	</div>	
+</div>	
