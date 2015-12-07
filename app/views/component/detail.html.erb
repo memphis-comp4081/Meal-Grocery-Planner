@@ -1,1 +1,34 @@
-<!-- Code the page layout here only, it should look similar to the component/edit.html.erb -->
+<div class="row">
+  <div class="col-md-4 col-md-offset-5">
+	<h2>Detail Dish</h2>
+  </div>
+</div>
+
+<table class="table table-striped">
+	
+	<tr>
+		<th>Component Instructions</th>
+		<th></th>
+	</tr>
+	
+	<% @components do |component| %>
+
+	<tr>
+		<td><%= component.instructions %></td>
+		<td><%= component.description %></td>
+		<td><%= link_to "Remove", components_ingredient_delete_path(comp_ingred, @component.id) %></td>
+	</tr>
+	
+	<% end %>
+
+</table>
+
+<%= link_to "Add New Ingredient to Dish", components_ingredient_add_path(params[:id]) %>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+	<p>
+	<%= f.submit "Save Dish" %>
+	</p>
+  </div>
+</div>	
