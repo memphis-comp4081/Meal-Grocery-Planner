@@ -12,14 +12,15 @@ div class="row">
 			<th>Last Name</th>
 			<th></th>
 		</tr>
-			<% @user.data.each do %>
-		
+
+
+	<% @datum.each do |datum| %>		
 		<tr>
 			<td><%= datum.f_name %></td>
 			<td><%= datum.l_name %></td>
-			<td>[<%= link_to "Edit", info_edit_path(pantry) %>]</td>
+			<td>[<%= link_to "Edit", info_edit_path %>]</td>
 		</tr>
-			<% end %>
+	<% end %>
 		
 
 	</table>
