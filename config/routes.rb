@@ -60,9 +60,7 @@ Rails.application.routes.draw do
   post 'menu/rec', to: 'menu#create_rec'
 
   get 'data/index', to: 'data#index', as: 'info'
-
   get 'data/edit', to: 'data#edit', as: 'info_edit'
-
   get 'users/edit', to: 'users#edit', as: 'settings'
 
 

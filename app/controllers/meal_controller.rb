@@ -32,9 +32,16 @@ class MealController < ApplicationController
 
   def update
     @meal = Meal.find(params[:id])
-    @meal.components << Component.find(params[:component_id])
-    @meal.save!
-    redirect_to meal_edit_url(@meal.id)
+    begin
+      @meal.components << Component.find(params[:component_id])
+      @meal.update(params_meal)
+      @meal.save!
+      redirect_to meal_edit_url(@meal.id)
+    rescue
+      @meal.update(params_meal)
+      @meal.save!
+      redirect_to meal_list_url
+    end
   end
 
   def delete

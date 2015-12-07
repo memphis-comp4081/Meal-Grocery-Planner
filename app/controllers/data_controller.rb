@@ -4,6 +4,6 @@ class DataController < ApplicationController
   end
 
   def edit
-  	@datum = Datum.find(params[:new_datum])
+  	@datum = Data.find(params[:new_datum])
   end
 end
