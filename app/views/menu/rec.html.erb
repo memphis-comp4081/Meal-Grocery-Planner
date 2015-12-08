@@ -1,16 +1,16 @@
 <div class="container-fluid full-height-width">
-	<div class="row well well-content-form">
-		<div class="col-md-12 ">
+	<div class="row well-content">
+		<div class="col-md-8 col-sm-offset-2">
 		<%= form_tag do %>
 		<div class="row">
-		  <div class="col-md-12 centered-item">
-			<P>Recommended Meals:</p>
+		  <div class="col-md-12 centered-item border-bottom">
+			<h2>Recommended Meals:</h2>
 		  </div>
 		</div>
 
 		<div class="row">
 		  <div class="col-md-12 centered-item">
-			<select class="select-two form-control" name = "recommendation_select">
+			<select class="select-two form-control select-two-style" name = "recommendation_select">
 				<% @recommendations.each do |recommendation| %>
 					<option value = "<%= recommendation["id"] %>"><%= recommendation["name"] %></option>
 				<% end %>

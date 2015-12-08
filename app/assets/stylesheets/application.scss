@@ -95,8 +95,10 @@ html {
 	    
 	}
 	.input-text,
-	.select-two{
+	.select-two-style{
 		width: 450px;
+		margin: auto;
+		color: #000;
 	}
 	.well-content-form{
 	    padding: 0px;
@@ -151,8 +153,10 @@ html {
 	}
 
 	.input-text,
-	.select-two{
+	.select-two-style{
 		width: 250px;
+		color: #000;
+		margin: auto;
 	}
 }
 
@@ -213,9 +217,7 @@ h6{
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     background-color: rgba(118,50,13,0.5);
 }
-.content-row{
 
-}
 
 
 
