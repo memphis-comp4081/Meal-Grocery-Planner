@@ -59,13 +59,16 @@ Rails.application.routes.draw do
   get 'menu/rec', to: 'menu#rec', as: 'menu_rec'
   post 'menu/rec', to: 'menu#create_rec'
 
-  get 'data/index', to: 'data#index', as: 'info'
+
 
   get 'data/edit', to: 'data#edit', as: 'info_edit'
+  patch 'data.:id', to: 'data#update'
+  post 'data/:id/edit', to: 'data#update'
 
+  
   get 'users/edit', to: 'users#edit', as: 'settings'
 
-
+  
 
 
 
