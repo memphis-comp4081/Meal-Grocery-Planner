@@ -73,7 +73,7 @@ html {
 		margin-top: -55px;
 	}
 	.excess-margin{
-		margin-bottom: 50px;
+		margin-bottom: 12px;
 	}
 	.no-margin{
 		margin: 0;
@@ -106,6 +106,12 @@ html {
 	    margin-top: 70px;
 		width: 60%;
 		padding: 10px;
+	}
+	.border-bottom{
+		border-style: none none solid none;
+		border-width: 2px;
+		/*padding-bottom: 20px;*/
+		margin-bottom: 20px;
 	}
 }
 
@@ -175,6 +181,9 @@ h6{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+.landing-text{
+	color: #F79C06;
 }
 
 .centered-item{
