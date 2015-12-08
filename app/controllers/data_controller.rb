@@ -11,14 +11,21 @@ class DataController < ApplicationController
   end
 
   def edit
-  	@data =current_user.Data.find(params[:id])
+    @data = Data.find(params_data)
+    if params_data.blank?
+      params_data=""
+    # this won't set tye default data to " "  but it does test if the params are blank
+    @data= Data.new(params_data)
+    else
+  	@data =current_user.Data.find(params_data)
+    end
   end
 
   def create
     @data = Data.new(params_data)
     # @meal.components.push(@component)
     if params_data.blank
-      params_data=''
+      params_data=""
       @data=Data.new(params_data)
       @data.save
     else
