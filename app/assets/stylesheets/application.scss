@@ -95,10 +95,14 @@ html {
 	    
 	}
 	.input-text,
+	.input-text-area,
 	.select-two-style{
-		width: 450px;
+		width: 325px;
 		margin: auto;
 		color: #000;
+	}
+	.input-text-area{
+		min-height: 250px;
 	}
 	.well-content-form{
 	    padding: 0px;
@@ -153,10 +157,14 @@ html {
 	}
 
 	.input-text,
+	.input-text-area,
 	.select-two-style{
 		width: 250px;
 		color: #000;
 		margin: auto;
+	}
+	.input-text-area{
+		min-height: 100px;
 	}
 }
 
