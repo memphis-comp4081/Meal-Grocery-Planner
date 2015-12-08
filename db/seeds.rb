@@ -99,17 +99,33 @@ kevin.pantries.push(p9)
 kevin.save!
 scallion.pantries.push(p9)
 
+image_src = File.join(Rails.root, "app/assets/images/DSC_0418-Version-2.jpg")
+src_file = File.new(image_src)
+
+image_src1 = File.join(Rails.root, "app/assets/images/rice.jpg")
+src_file1 = File.new(image_src1)
+
+image_src2 = File.join(Rails.root, "app/assets/images/IMG_9697.jpg")
+src_file2 = File.new(image_src2)
+
+image_src3 = File.join(Rails.root, "app/assets/images/feijoada2jpg_jpg_460x265_crop_upscale_q85.jpg")
+src_file3 = File.new(image_src3)
+
 feijoada = Component.create!(description: "Feijoada",
-		instructions: "Soak beans overnight. In large pan heat oil. Add garlic and half of the onions saute till fragrant. Add salted pork cook until brown. Add rinsed beans, linguica, the rest of the onion, bayleaves, cover with water, and salt and pepper to taste. Bring to boil and then simmer for at least 2 hours. Severed with scallions and parsely.")
+		instructions: "Soak beans overnight. In large pan heat oil. Add garlic and half of the onions saute till fragrant. Add salted pork cook until brown. Add rinsed beans, linguica, the rest of the onion, bayleaves, cover with water, and salt and pepper to taste. Bring to boil and then simmer for at least 2 hours. Severed with scallions and parsely.",
+		image: src_file3)
 
 martinburg = Component.create!(description: "Martin Burgers",
-		instructions: "Heat a heavy frying pan and sprinkle bottom lightly with table salt. Mix meat, handling lightly, just enough to form into four patties. Grill over medium-high heat about 4 minutes on each side. Pour chilled bourbon in chilled shot glass and serve meat and bourbon on a TV tray.")
+		instructions: "Heat a heavy frying pan and sprinkle bottom lightly with table salt. Mix meat, handling lightly, just enough to form into four patties. Grill over medium-high heat about 4 minutes on each side. Pour chilled bourbon in chilled shot glass and serve meat and bourbon on a TV tray.",
+		image: src_file1)
 
-thaigreen = Component.create!(description: "Thai Green Curry",
-		instructions: "Heat up a pot over medium heat and add the oil. Saute the green curry paste until aromatic, add the chicken and stir to combine well with the curry paste. Add the coconut milk and water and bring it to a quick boil. Add the bamboo shoots, kaffir lime leaves, and red chilies. Lower the heat to simmer, cover the pot and let simmer for 10 minutes or until the curry slightly thickens. Add the fish sauce, sugar, and basil leaves. Stir to mix well.")
+khaosoi = Component.create!(description: "Khao soi",
+		instructions: "Place chiles in a small heatproof bowl, add boiling water to cover, and let soak until softened, 25–30 minutes. Drain chiles, reserving soaking liquid. Purée chiles, shallots, garlic, ginger, cilantro stems, coriander, turmeric, curry powder, and 2 Tbsp. soaking liquid in a food processor, adding more soaking liquid by tablespoonfuls, if needed, until smooth. Heat oil in a large heavy pot over medium heat. Add khao soi paste; cook, stirring constantly, until slightly darkened, 4–6 minutes. Add coconut milk and broth. Bring to a boil; add chicken. Reduce heat and simmer until chicken is fork-tender, 20–25 minutes. Transfer chicken to a plate. Let cool slightly; shred meat. Meanwhile, cook noodles according to package directions. Add chicken, 3 Tbsp. fish sauce, and sugar to soup. Season with salt or more fish sauce, if needed. Divide soup and noodles among bowls and serve with toppings.",
+		image: src_file)
 
 ricecom = Component.create!(description: "Simple Rice",
-		instructions: "Add rice, water, salt, boil. Simple.")
+		instructions: "Add rice, water, salt, boil. Simple.",
+		image: src_file1)
 
 icF = ComponentsIngredient.create!()
 
@@ -137,9 +153,8 @@ meal1.save!
 meal2 = Meal.create!(name: "Feijoada and Rice", description: "A Brasilian traditional dish severd with rice.")
 meal2.components.push(feijoada, ricecom)
 meal2.save!
-meal3 = Meal.create!(name: "Thai Green Curry and Rice", description: "A Thai Green Curry with rice served for special occasions.")
-meal3.components.push(thaigreen)
-meal3.components.push(ricecom)
+meal3 = Meal.create!(name: "Khao soi and Rice", description: "A Northern Thai Curry with crunchy noodles served with noodles.")
+meal3.components.push(khaosoi)
 meal3.save!
 
 

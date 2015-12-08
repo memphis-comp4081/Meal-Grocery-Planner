@@ -9,15 +9,15 @@
 
 		<%= form_for(@component, html: { multipart: true }) do |f| %>
 		<div class="row">
-		  <div class="col-md-6 ">
+		  <div class="col-md-6 picture-box">
 			
 			<% if @component.image.url %>
-			<div class = "image_div">
-				<img class = "image" src = "<%= @component.image.url %>">
+			<div class = "">
+				<img class = "img-responsive" src = "<%= @component.image.url %>">
 			</div>
 			<% else %>
-			<div class = "image_div">
-				<img class = "image" src = "/assets/DSC_0152-Version-2.jpg">
+			<div class = "">
+				<img class = "img-responsive" src = "/assets/knife-and-fork-orange-md.png">
 			</div>
 			<% end %>
 		
@@ -73,7 +73,7 @@
 		<div class="row">
 		  <div class="col-md-12 centered-item">
 			<p>
-			<%= f.submit "Save Dish" %>
+			<%= f.submit "Save Dish", class: "btn"%>
 			</p>
 		  </div>
 		</div>	

@@ -11,7 +11,7 @@
 		<%= form_tag do %>
 		<div class="row">
 		  <div class="col-md-12 centered-item">
-			<select class="form-control select-two select-two-style" name = "meal_select">
+			<select class="select-two form-control select-two-style" name = "meal_select">
 				<% @meal_list.each do |menu| %>
 					<option value = "<%= menu.meal.id %>"><%= menu.meal.name %></option>
 				<% end %>
@@ -58,7 +58,7 @@
 		<div class="row">
 		  <div class="col-md-12 centered-item">
 			<br>
-			<%= submit_tag("Add Meal") %>
+			<%= submit_tag "Add Meal", class: "btn" %>
 		  </div>
 		</div>
 
