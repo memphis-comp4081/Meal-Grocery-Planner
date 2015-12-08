@@ -12,6 +12,12 @@
  *
  */
 
+ /* ...
+*= require_self
+*= require_
+*= require_tree .
+*/
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -82,6 +88,7 @@ html {
 		margin-top: 20%;
 		margin-left: 5%;
 	  	display: block;
+	  	
 		background-color: rgba(118,50,13,.75);
 		float: none;
 		max-width: 350px;
@@ -92,6 +99,7 @@ html {
 		margin: 70px 20px 20px 20px;
 	    padding: 0px;
 	    height: auto;
+	    /*background-color: rgb(251, 247, 222);*/
 	    
 	}
 	.input-text,
@@ -112,6 +120,7 @@ html {
 	    margin-top: 70px;
 		width: 60%;
 		padding: 10px;
+
 	}
 	.border-bottom{
 		border-style: none none solid none;
