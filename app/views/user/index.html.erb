@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+	<h2>User Information</h2>
+  	
+
+<%= form_for(@user) do |u| %>
+
+<div class="row">
+  <div class="col-md-12 centered-item">
+	<table>
+		<tr>
+			<td><%= u.label 'Email Address' %>:</td>
+			<td><%= @user.email %></td>
+		</tr>
+		<tr>
+			<td><%= u.label 'First Name' %>: </td>
+			<td><%= @user.first_name %></td>
+		</tr>
+		<tr>
+			<td><%= u.label 'Last Name' %>: </td>
+			<td><%= @user.last_name %></td>
+		</tr>
+	</table>
+  </div>
+</div>	
+
+<div class="row">
+		  <div class="col-md-12 centered-item">
+			<p>
+				<%= link_to "Edit your information", user_edit_path(@user) %>
+			</p>
+		  </div>
+		</div>	
+
+<% end %>
+
+</div>
+</div>
