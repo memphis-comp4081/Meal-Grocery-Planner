@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>MealGroceryPlanner</title>
+  <link rel="stylesheet" media="all" href="MealGroceryPlanner_files/application.css" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="MealGroceryPlanner_files/component.css" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="MealGroceryPlanner_files/components.css" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="MealGroceryPlanner_files/components_ingredient.css" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="MealGroceryPlanner_files/data.css" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="MealGroceryPlanner_files/home.css" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="MealGroceryPlanner_files/ingredient.css" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="MealGroceryPlanner_files/meal.css" data-turbolinks-track="true">
+<link rel="stylesheet" media="all" href="MealGroceryPlanner_files/pantry.css" data-turbolinks-track="true">
+  <script src="MealGroceryPlanner_files/jquery.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/jquery_ujs.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/turbolinks.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/affix.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/alert.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/button.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/carousel.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/collapse.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/dropdown.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/tab.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/transition.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/scrollspy.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/modal.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/tooltip.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/popover.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/bootstrap-sprockets.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/select2.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/component.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/components.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/components_ingredient.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/data.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/home.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/ingredient.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/meal.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/pantry.js" data-turbolinks-track="true"></script>
+<script src="MealGroceryPlanner_files/application.js" data-turbolinks-track="true"></script>
+  <link rel="stylesheet" media="all" href="MealGroceryPlanner_files/select2.css" data-turbolinks-track="true">
+  <script src="MealGroceryPlanner_files/select2.js" data-turbolinks-track="true"></script>
+
+  <!--<link href="vendor/assets/stylesheets/css/select2.min.css" rel="stylesheet"/>
+  <script src="vendor/assets/javascripts/js/select2.min.js"></script> -->
+
+
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="bFa1H2twPkuXJDdn1P0qYhcwdAO+KQ+wB1vadXcZaYy/fL+xlZj88rWZCXdkLn//oPP1y+/edtQPuvN7t4zEqg==">
+</head>
+<body>
+
+<nav class="navbar navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#meal_planner_links" aria-expanded="false">
+        <i class="glyphicon glyphicon-menu-down"></i>
+      </button>
+      <a class="navbar-brand" href="#">
+        Meal Grocery Planner
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="meal_planner_links"> 
+      <ul class="nav navbar-nav">
+        <li class=""><a data-method="get" href="http://localhost:3000/menu">My Menu</a><span class="sr-only">(current)</span></li>
+        <li class=""><a data-method="get" href="http://localhost:3000/meal_list">Favorite Meals</a><span class="sr-only">(current)</span> </li>
+        <li class=""><a data-method="get" href="http://localhost:3000/component">Dishes</a><span class="sr-only">(current)</span> </li>
+        <li class=""><a data-method="get" href="http://localhost:3000/pantry">My Pantry</a><span class="sr-only">(current)</span> </li>
+        <li class=""><a data-method="get" href="http://localhost:3000/data/edit">User Info</a><span class="sr-only">(current)</span> </li>
+        <li><a rel="nofollow" data-method="delete" href="http://localhost:3000/users/sign_out">Sign out</a></li>
+    </ul></div>
+  
+  </div>
+</nav>
+
+<!-- Flash messages as requested/required by Devise -->
+
+
+<!-- <div class="lettuce-area">
+  <div class="cheese-area">
+    <div class="burger-area">
+      <div class="bun-area"> -->
+
+          <div class="container-fluid full-height-width">
+	<div class="row well-content">
+		<div class="col-md-8 col-sm-offset-2">
+
+			<div class="row">
+			  <div class="col-md-12 centered-item border-bottom">
+				<h2>Add Ingredient</h2>
+			  </div>
+			</div>
+
+
+			<form enctype="multipart/form-data" action="/ingredient/add" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="bFa1H2twPkuXJDdn1P0qYhcwdAO+KQ+wB1vadXcZaYy/fL+xlZj88rWZCXdkLn//oPP1y+/edtQPuvN7t4zEqg==" type="hidden">
+
+			<div class="row">
+			  <div class="col-md-12 centered-item">
+				<p>
+				<label for="ingredient_description">Description</label>:
+				<input class="form-control input-text" name="ingredient[description]" id="ingredient_description" type="text">
+				</p>
+			  </div>
+			</div>
+
+			<div class="row">
+			  <div class="col-md-12 centered-item">
+				<p>
+				<label for="ingredient_unit_of_measure">Unit of measure</label>:
+				<input class="form-control input-text" name="ingredient[unit_of_measure]" id="ingredient_unit_of_measure" type="text">
+				</p>
+			  </div>
+			</div>
+
+			<div class="row">
+			  <div class="col-md-6 centered-item">
+				<p>
+				<label for="ingredient_Image (Optional)">Image (optional)</label>: 
+				</p>
+			</div>
+			<div class="col-md-6 centered-item">
+				<p>
+				<input name="ingredient[image]" id="ingredient_image" type="file">
+				</p>
+			</div>
+
+				
+			</div>
+			</form></div>
+
+			<div class="row">
+			  <div class="col-md-12 centered-item">
+				<p>
+				<input name="commit" value="Save Ingredient" type="submit">
+				</p>
+			  </div>
+			</div>
+		</div>
+	</div>
+
+
+<!--       </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+</body></html>
