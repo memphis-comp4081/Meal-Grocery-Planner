@@ -7,12 +7,13 @@ class MealListController < ApplicationController
 		@meal_list = current_user.meal_lists
 		@meals = Meal.all
 	end
-	def delete
-		MealList.delete(params[:id])
-		@meal_list = current_user.meal_lists
-		@meals = Meal.all
+
+	def destroy
+		@meal_list = MealList.find(params[:id])
+		@meal_list.destroy
 		redirect_to meal_list_url
 	end
+
 	def edit
 		new_meal = Meal.find(params[:new_meal])
 		dupe = false

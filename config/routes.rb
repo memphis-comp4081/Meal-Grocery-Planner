@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get 'meal_list', to: 'meal_list#index', as: 'meal_list'
   post 'meal_list', to: 'meal_list#edit', as: 'meal_list_edit'
   get 'meal_list/:id/delete', to: 'meal_list#delete', as: 'meal_list_delete'
+  delete 'meal_list/:id', to: 'meal_list#destroy', as: 'delete_meal_list'
 
   #component routes
   get 'component', to: 'component#index', as: 'component'
