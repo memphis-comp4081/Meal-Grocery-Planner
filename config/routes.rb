@@ -65,6 +65,8 @@ Rails.application.routes.draw do
   post 'user/:id/edit', to: 'user#update'
   put '/user/:id', to: 'user#update'
 
+  get 'grocery', to: 'grocery#index', as: 'grocery'
+
   
 
 
