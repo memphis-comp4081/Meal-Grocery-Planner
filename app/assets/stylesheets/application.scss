@@ -12,12 +12,6 @@
  *
  */
 
- /* ...
-*= require_self
-*= require_
-*= require_tree .
-*/
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -28,7 +22,11 @@ body {
     height: 100%;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #BE4E00;
-    background-color:#FAC05E;	
+    background-color:rgb(255, 248, 220);
+
+    /*rgb(251, 251, 251);*/
+
+    /*#FAC05E;	*/
 }
 
 html {
@@ -193,6 +191,9 @@ h5,
 h6{
 	text-align: center;
 }
+td{
+	vertical-align: middle;
+}
 
 #landing-back{
 	background: url('/assets/DSC_0152-Version-2.jpg') left top no-repeat; 
@@ -224,7 +225,7 @@ h6{
 .picture-box {
 /*    display: block;
     position: relative;*/
-    margin-top: 50px;
+    margin-top: 15px;
 /*    max-width: 650px;
     min-height:350px;*/
 }
@@ -233,7 +234,7 @@ h6{
     margin-bottom: 0;
     text-transform: uppercase;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: rgba(118,50,13,0.5);
+    background-color: rgba(118,50,13,0.75);
 }
 
 .image-custom{
@@ -247,6 +248,10 @@ img.image{
     max-height:400px;
     margin-right: 10px;
     margin-top: 30px;
+}
+.tumb{
+	max-width:50px;
+    max-height:50px;
 }
 
 

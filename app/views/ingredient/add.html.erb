@@ -1,47 +1,57 @@
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-	<h2>Add Ingredient</h1>
-  </div>
-</div>
+<div class="container-fluid full-height-width">
+	<div class="row well-content">
+		<div class="col-md-8 col-sm-offset-2">
 
-<div class="row">
-	<div class="col-md-4 col-md-offset-4">
-		<%= form_for(:ingredient, html: { multipart: true }) do |f| %>
+			<div class="row">
+			  <div class="col-md-12 centered-item border-bottom">
+				<h2>Add Ingredient</h1>
+			  </div>
+			</div>
+
+
+			<%= form_for(:ingredient, html: { multipart: true }) do |f| %>
+
+			<div class="row">
+			  <div class="col-md-12 centered-item">
+				<p>
+				<%= f.label :description %>:
+				<%= f.text_field :description, class: 'form-control input-text' %>
+				</p>
+			  </div>
+			</div>
+
+			<div class="row">
+			  <div class="col-md-12 centered-item">
+				<p>
+				<%= f.label :unit_of_measure %>:
+				<%= f.text_field :unit_of_measure, class: 'form-control input-text' %>
+				</p>
+			  </div>
+			</div>
+
+			<div class="row">
+			  <div class="col-md-6 centered-item">
+				<p>
+				<%= f.label "Image (Optional)"%>: 
+				</p>
+			</div>
+			<div class="col-md-6 centered-item">
+				<p>
+				<%= f.file_field :image, class: "btn" %>
+				</p>
+			</div>
+
+				
+			</div>
+
+			<div class="row">
+			  <div class="col-md-12 centered-item">
+				<p>
+				<%= f.submit 'Submit', class: "btn" %>
+				</p>
+			  </div>
+			</div>
+			<% end %>
+		</div>
 	</div>
 </div>
-
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-	<p>
-	<%= f.label :description %>:
-	<%= f.text_field :description, class: "input_text" %>
-	</p>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-	<p>
-	<%= f.label :unit_of_measure %>:
-	<%= f.text_field :unit_of_measure %>
-	</p>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-	<p>
-	<%= f.label("Image (Optional)") %>:
-	<%= f.file_field :image %>
-	</p>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-	<p>
-	<%= f.submit %>
-	</p>
-  </div>
-</div>
-<% end %>

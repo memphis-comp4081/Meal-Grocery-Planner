@@ -45,17 +45,17 @@
 
 
 	<div class="row">
-	  <div class="col-md-12">
+	  <div class="col-md-12 centered-item">
 		<table class="table table-striped">
 			<tr>
 				<th>Ingredient</th>
-				<th></th>
+				<th>Remove</th>
 			</tr>
 
 			<% @comp_ingreds.each do |comp_ingred| %>
 			<tr>
 				<td><%= comp_ingred.ingredient.description %></td>
-				<td><%= link_to "Remove", components_ingredient_delete_path(comp_ingred, @component.id) %></td>
+				<td>[<%= link_to "remove", components_ingredient_delete_path(comp_ingred, @component.id) %>]</td>
 			</tr>
 			<% end %>
 		</table>

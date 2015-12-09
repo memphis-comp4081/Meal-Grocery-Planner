@@ -1,3 +1,9 @@
+  <script type="text/javascript">
+      $(document).ready(function() {
+        $('.select-two').select2();
+      });
+  </script>	
+
 <div class="container-fluid full-height-width">
 	<div class="row well-content">
 		<div class="col-md-8 col-sm-offset-2">
@@ -17,22 +23,13 @@
 			</select>
 		  </div>
 		</div>
-		<div class="row">
-		  <div class="col-md-12 centered-item">
-			<%= link_to "Add Favorite Meals", meal_list_path(), method: :get %>
-		  </div>
-		</div>
-
 		<br>
-		<div class="row">
-		  <div class="col-md-12 centered-item">
-			<p>Date (MM/DD/YY)</p>
-		  </div>
-		</div>
 
 		<div class="row">
 		  <div class="col-md-12 centered-item">
+		  	<p><label>Date (MM/DD/YY)</label><br>
 			<input type = "text" name = "date" class="input-text">
+			</p>
 		  </div>
 		</div>
 
@@ -40,20 +37,26 @@
 
 		<div class="row">
 		  <div class="col-md-12 centered-item">
-			<p>Time (hour:minute)</p>
+			
 		  </div>
 		</div>
 
 		<div class="row">
 		  <div class="col-md-12 centered-item">
+		  	<p><label>Time (hour:minute)</label><br>
 			<input type="text" name="time" class="input-text">
 				<select name = "time_offset">
 				<option value = "0">AM</option>
 				<option value = "1">PM</option>
 			</select>
+			</p>
 		  </div>
 		</div>
-
+		<div class="row">
+		  <div class="col-md-12 centered-item">
+		  	<br>
+  		  </div>
+		</div>
 		<div class="row">
 		  <div class="col-md-12 centered-item">
 			<%= submit_tag "Add Meal", class: "btn" %>

@@ -117,7 +117,7 @@ feijoada = Component.create!(description: "Feijoada",
 
 martinburg = Component.create!(description: "Martin Burgers",
 		instructions: "Heat a heavy frying pan and sprinkle bottom lightly with table salt. Mix meat, handling lightly, just enough to form into four patties. Grill over medium-high heat about 4 minutes on each side. Pour chilled bourbon in chilled shot glass and serve meat and bourbon on a TV tray.",
-		image: src_file1)
+		image: src_file2)
 
 khaosoi = Component.create!(description: "Khao soi",
 		instructions: "Place chiles in a small heatproof bowl, add boiling water to cover, and let soak until softened, 25–30 minutes. Drain chiles, reserving soaking liquid. Purée chiles, shallots, garlic, ginger, cilantro stems, coriander, turmeric, curry powder, and 2 Tbsp. soaking liquid in a food processor, adding more soaking liquid by tablespoonfuls, if needed, until smooth. Heat oil in a large heavy pot over medium heat. Add khao soi paste; cook, stirring constantly, until slightly darkened, 4–6 minutes. Add coconut milk and broth. Bring to a boil; add chicken. Reduce heat and simmer until chicken is fork-tender, 20–25 minutes. Transfer chicken to a plate. Let cool slightly; shred meat. Meanwhile, cook noodles according to package directions. Add chicken, 3 Tbsp. fish sauce, and sugar to soup. Season with salt or more fish sauce, if needed. Divide soup and noodles among bowls and serve with toppings.",

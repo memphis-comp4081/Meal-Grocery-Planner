@@ -12,6 +12,7 @@
 				<div class="col-md-12">
 					<table class="table table-striped">
 						<tr>
+							<th></th>
 							<th>Description</th>
 							<th>Recipe</th>
 							<th></th>
@@ -19,6 +20,14 @@
 						<% @components.each do |component| %>
 
 						<tr>
+							<td>
+								<% if component.image.url %>
+				          <img class = "img-thumbnail tumb" src = "<%=component.image.url %>">
+				          <% else %>
+				          <img class = "img-thumbnail tumb" src = "/assets/knife-and-fork-orange-md.png">
+				        	<% end %>
+
+							</td>
 							<td><%= component.description %></td>
 							<td><%= component.instructions %></td>
 							<td>[<%= link_to "update", component_edit_path(component) %>]</td>
