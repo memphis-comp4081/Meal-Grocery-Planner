@@ -63,11 +63,11 @@ Rails.application.routes.draw do
   get 'menu/rec', to: 'menu#rec', as: 'menu_rec'
   post 'menu/rec', to: 'menu#create_rec'
 
-  get 'data/edit', to: 'data#edit', as: 'info_edit'
-  patch 'data.:id', to: 'data#update'
-  post 'data/:id/edit', to: 'data#update'
-  
-  get 'users/edit', to: 'users#edit', as: 'settings'
+  get 'user', to: 'user#index', as: 'user'
+  get 'user/:id/edit', to: 'user#edit', as: 'user_edit'
+  patch '/user.:id', to: 'user#update'
+  post 'user/:id/edit', to: 'user#update'
+  put '/user/:id', to: 'user#update'
 
   
 
