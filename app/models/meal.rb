@@ -9,3 +9,4 @@ class Meal < ActiveRecord::Base
 	validates :description, presence: true, length: {in: 0..250,
 		message: "Must be between 0 and 250 characters."}
 end
+

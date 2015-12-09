@@ -39,12 +39,15 @@ Rails.application.routes.draw do
   patch '/component.:id', to: 'component#update'
   post 'component/:id/edit', to: 'component#update'
   put '/component/:id', to: 'component#update'
+  get 'component/:id/detail', to: 'component#detail', as: 'component_detail'
 
   #components_ingredient routes
   get 'components_ingredient/:id/add', to: 'components_ingredient#add', as: 'components_ingredient_add'
   post 'components_ingredient/:id/add', to: 'components_ingredient#create'
   get 'components_ingredient/:id/:comp_id/delete', to: 'components_ingredient#delete', as: 'components_ingredient_delete'
   
+  get 'components_ingredient/:id/:comp_id/index', to: 'components_ingredient#index', as: 'components_ingredient_index'
+
   get 'meal', to: 'meal#index', as: 'meal'
   get 'meal/add', to: 'meal#add', as: 'meal_add'
   post 'meal/add', to: 'meal#create'

@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+	<h2>Meal Component Ingredients</h2>
+  </div>
+</div>	
+
+<div class = "row">
+	<div class = "col-md=12">
+		<table class = "table table-striped">
+			<tr>
+				<th>Component</th>
+				<th>Ingredients</th>
+				<th>Recipe</th>
+			</tr>
+
+			<% @comp_ingred.each do |comp_ingred| %>
+
+			<tr>
+				@comp = Component.find(@comp_ingred.component_id)
+				<td><%= comp.description %></td>
+				<td><%= comp_ingred.description %></td>
+				#ingredient variable
+
+			</tr>
+
+			<% end %>
+		</table>
+	</div>
+</div>
