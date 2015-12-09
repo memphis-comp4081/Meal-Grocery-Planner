@@ -100,16 +100,16 @@ kevin.save!
 scallion.pantries.push(p9)
 
 feijoada = Component.create!(description: "Feijoada",
-		instructions: "Soak beans overnight. In large pan heat oil. Add garlic and half of the onions saute till fragrant. Add salted pork cook until brown. Add rinsed beans, linguica, the rest of the onion, bayleaves, cover with water, and salt and pepper to taste. Bring to boil and then simmer for at least 2 hours. Severed with scallions and parsely.")
+		instructions: "Soak beans overnight. In large pan heat oil. Add garlic and half of the onions saute till fragrant. Add salted pork cook until brown. Add rinsed beans, linguica, the rest of the onion, bayleaves, cover with water, and salt and pepper to taste. Bring to boil and then simmer for at least 2 hours. Severed with scallions and parsely.", image: File.new('db/seedimages/f.jpg'))
 
 martinburg = Component.create!(description: "Martin Burgers",
-		instructions: "Heat a heavy frying pan and sprinkle bottom lightly with table salt. Mix meat, handling lightly, just enough to form into four patties. Grill over medium-high heat about 4 minutes on each side. Pour chilled bourbon in chilled shot glass and serve meat and bourbon on a TV tray.")
+		instructions: "Heat a heavy frying pan and sprinkle bottom lightly with table salt. Mix meat, handling lightly, just enough to form into four patties. Grill over medium-high heat about 4 minutes on each side. Pour chilled bourbon in chilled shot glass and serve meat and bourbon on a TV tray.", image: File.new('db/seedimages/burger.jpg'))
 
 thaigreen = Component.create!(description: "Thai Green Curry",
-		instructions: "Heat up a pot over medium heat and add the oil. Saute the green curry paste until aromatic, add the chicken and stir to combine well with the curry paste. Add the coconut milk and water and bring it to a quick boil. Add the bamboo shoots, kaffir lime leaves, and red chilies. Lower the heat to simmer, cover the pot and let simmer for 10 minutes or until the curry slightly thickens. Add the fish sauce, sugar, and basil leaves. Stir to mix well.")
+		instructions: "Heat up a pot over medium heat and add the oil. Saute the green curry paste until aromatic, add the chicken and stir to combine well with the curry paste. Add the coconut milk and water and bring it to a quick boil. Add the bamboo shoots, kaffir lime leaves, and red chilies. Lower the heat to simmer, cover the pot and let simmer for 10 minutes or until the curry slightly thickens. Add the fish sauce, sugar, and basil leaves. Stir to mix well.", image: File.new('db/seedimages/gcurry.jpg'))
 
 ricecom = Component.create!(description: "Simple Rice",
-		instructions: "Add rice, water, salt, boil. Simple.")
+		instructions: "Add rice, water, salt, boil. Simple.", image: File.new('db/seedimages/rice.jpg'))
 
 icF = ComponentsIngredient.create!()
 
@@ -131,13 +131,13 @@ feijoada.components_ingredients.push(icF)
 feijoada.save!
 
 
-meal1 = Meal.create!(name: "Hamburger and Fries", description: "An all American favorite.")
+meal1 = Meal.create!(name: "Hamburger and Fries", description: "An all American favorite.", image: File.new('db/seedimages/hnfries.jpg'))
 meal1.components.push(martinburg)
 meal1.save!
-meal2 = Meal.create!(name: "Feijoada and Rice", description: "A Brasilian traditional dish severd with rice.")
+meal2 = Meal.create!(name: "Feijoada and Rice", description: "A Brasilian traditional dish severd with rice.", image: File.new('db/seedimages/fnrice.jpg'))
 meal2.components.push(feijoada, ricecom)
 meal2.save!
-meal3 = Meal.create!(name: "Thai Green Curry and Rice", description: "A Thai Green Curry with rice served for special occasions.")
+meal3 = Meal.create!(name: "Thai Green Curry and Rice", description: "A Thai Green Curry with rice served for special occasions.", image: File.new('db/seedimages/gcurrynrice.jpg'))
 meal3.components.push(thaigreen)
 meal3.components.push(ricecom)
 meal3.save!
