@@ -44,7 +44,7 @@
  	<% if flash[:notice] %>
   <div class="container-fluid excess-margin"> 
     <div class="row excess-margin">
-      <div class="col-md-12 excess-margin">
+      <div class="col-md-12 excess-margin centered-item">
  		   <p class="alert alert-info"><%=flash[:notice] %></p>
       </div>
     </div>
@@ -52,7 +52,7 @@
  	<% end %>
 
  	<% if flash[:alert] %>
-  <div class="container-fluid excess-margin"> 
+  <div class="container-fluid excess-margin centered-item"> 
     <div class="row excess-margin">
       <div class="col-md-12 excess-margin">
  		   <p class="alert alert-danger"><%= flash[:alert] %></p>

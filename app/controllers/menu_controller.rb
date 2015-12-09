@@ -59,7 +59,11 @@ class MenuController < ApplicationController
 			date = date + minutes + hours
 			meal=  Meal.find(params[:meal_select])
 			menu = Menu.create(time: date, meal:meal)
-			menu.save
+			begin
+				menu.save!
+			rescue => e
+				flash[:alert] = e.to_s
+			end
 
 			current_user.menus.push(menu)
 
@@ -68,7 +72,11 @@ class MenuController < ApplicationController
 		elsif(date)
 			meal=  Meal.find(params[:meal_select])
 			menu = Menu.create(time: date, meal:meal)
-			menu.save
+			begin
+				menu.save!
+			rescue => e
+				flash[:alert] = e.to_s
+			end
 
 			current_user.menus.push(menu)
 
@@ -103,7 +111,11 @@ class MenuController < ApplicationController
 			date = date + minutes + hours
 			meal=  Meal.find(params[:recommendation_select])
 			menu = Menu.create(time: date, meal:meal)
-			menu.save
+			begin
+				menu.save!
+			rescue => e
+				flash[:alert] = e.to_s
+			end
 
 			current_user.menus.push(menu)
 
@@ -113,7 +125,11 @@ class MenuController < ApplicationController
 			meal=  Meal.find(params[:recommendation_select])
 			menu = Menu.create(time: date, meal:meal)
 
-			menu.save
+			begin
+				menu.save!
+			rescue => e
+				flash[:alert] = e.to_s
+			end
 
 			current_user.menus.push(menu)
 
