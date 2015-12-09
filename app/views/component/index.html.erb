@@ -27,7 +27,7 @@
 				        	<% end %>
 
 							</td>
-							<td><%= component.description %></td>
+							<td><%= link_to component.description, component_detail_path(component) %></td>
 							<td><%= component.instructions %></td>
 							<td>[<%= link_to "update", component_edit_path(component) %>]</td>
 						<tr>

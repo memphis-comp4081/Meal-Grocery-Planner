@@ -51,6 +51,11 @@ class MealController < ApplicationController
     redirect_to meal_edit_url(@meal.id)
   end
 
+  def detail
+    @meal = Meal.find(params[:id])
+    @meal_components = @meal.components.where(:meal_id => params[:id])
+  end
+
   private
 
   def params_meal

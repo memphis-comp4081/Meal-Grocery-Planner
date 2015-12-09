@@ -1,35 +1,65 @@
-<div class="row">
-  <div class="col-md-4 col-md-offset-5">
-	<h2>Detail Dish</h2>
-  </div>
+<div class="container-fluid full-height-width">
+	<div class="row well-content">
+		<div class="col-md-8 col-sm-offset-2">			
+			<div class="row">  
+				<div class="row">
+				  <div class="col-md-12 centered-item bottom-pad">
+					
+					<br class="bottom-pad">
+				  </div>
+				</div>
+			</div>
+			<div class="row">
+			  <div class="col-md-6 centered-item">
+			  	<% if @component.image.url %>
+				<div class = "image_div">
+				<img class = "img-responsive" src = "<%= @component.image.url %>">
+				</div>
+				<% else %>
+				<div class = "image_div">
+				<img class = "img-responsive" src = "/assets/knife-and-fork-orange-md.png">
+				</div>
+			    <% end %>
+			  </div>
+			  <div class="col-md-6 border-bottom centered-item">
+				<h2><%= @component.description.html_safe %></h2>
+			  </div>
+			  <div class="col-md-6 centered-item">
+				<table class="table table-striped">
+					
+					<tr>
+						<th>Ingredients:</th>
+					</tr>
+					
+
+					<% @comp_ingreds.each do |comp_ingred| %>
+					<tr>
+						<td><%= comp_ingred.ingredient.description %></td>
+					</tr>
+					<% end %>
+
+				</table>
+				</div>
+			</div>
+			<div class="row">  
+				<div class="row">
+				  <div class="col-md-12 border-bottom centered-item">
+					<h3>Instructions:</h3>
+				  </div>
+				</div>
+			</div>
+
+
+			<div class="row">
+			  <div class="col-md-12 border-bottom centered-item">
+				<p><%= @component.instructions.html_safe %></p>
+			  </div>
+			</div>
+		</div>
+	</div>
 </div>
 
-<p><%= @component.description.html_safe %></p>
 
-<p><%= @component.instructions.html_safe %></p>
+					
 
-<table class="table table-striped">
-	
-	<tr>
-		<th>Component Ingredients</th>
-	</tr>
-	
-
-	<% @comp_ingreds.each do |comp_ingred| %>
-	<tr>
-		<td><%= comp_ingred.ingredient.description %></td>
-	</tr>
-	<% end %>
-
-
-</table>
-
-		
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-	<p>
-	
-	</p>
-  </div>
-</div>	
 

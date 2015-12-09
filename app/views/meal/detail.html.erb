@@ -1,0 +1,66 @@
+<div class="container-fluid full-height-width">
+	<div class="row well-content">
+		<div class="col-md-8 col-sm-offset-2">			
+			<div class="row">  
+				<div class="row">
+				  <div class="col-md-12 centered-item bottom-pad">
+					
+					<br class="bottom-pad">
+				  </div>
+				</div>
+			</div>
+			<div class="row">
+			  <div class="col-md-6 centered-item">
+			  	<% if @meal.image.url %>
+				<div class = "image_div">
+				<img class = "img-responsive" src = "<%= @meal.image.url %>">
+				</div>
+				<% else %>
+				<div class = "image_div">
+				<img class = "img-responsive" src = "/assets/knife-and-fork-orange-md.png">
+				</div>
+			    <% end %>
+			  </div>
+			  <div class="col-md-6 border-bottom centered-item">
+				<h2><%= @meal.name.html_safe %></h2>
+			  </div>
+			  <div class="col-md-6 centered-item">
+				<table class="table table-striped">
+					
+					<tr>
+						<th>Dishes:</th>
+					</tr>
+					
+
+					<% @meal_components.each do |meal_comp| %>
+					<tr>
+						<td><%= meal_comp.component.description %></td>
+					</tr>
+					<% end %>
+
+				</table>
+				</div>
+			</div>
+			<div class="row">  
+				<div class="row">
+				  <div class="col-md-12 border-bottom centered-item">
+					<h3>Description:</h3>
+				  </div>
+				</div>
+			</div>
+
+
+			<div class="row">
+			  <div class="col-md-12 border-bottom centered-item">
+				<p><%= @meal.description.html_safe %></p>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+					
+
+
