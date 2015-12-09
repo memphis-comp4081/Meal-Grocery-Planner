@@ -111,6 +111,12 @@ src_file2 = File.new(image_src2)
 image_src3 = File.join(Rails.root, "app/assets/images/feijoada2jpg_jpg_460x265_crop_upscale_q85.jpg")
 src_file3 = File.new(image_src3)
 
+image_src4 = File.join(Rails.root, "app/assets/images/lfca12.jpg")
+src_file4 = File.new(image_src4)
+
+image_src5 = File.join(Rails.root, "app/assets/images/cheeseburger-fries-homemade.jpg")
+src_file5 = File.new(image_src5)
+
 feijoada = Component.create!(description: "Feijoada",
 		instructions: "Soak beans overnight. In large pan heat oil. Add garlic and half of the onions saute till fragrant. Add salted pork cook until brown. Add rinsed beans, linguica, the rest of the onion, bayleaves, cover with water, and salt and pepper to taste. Bring to boil and then simmer for at least 2 hours. Severed with scallions and parsely.",
 		image: src_file3)
@@ -147,13 +153,13 @@ feijoada.components_ingredients.push(icF)
 feijoada.save!
 
 
-meal1 = Meal.create!(name: "Hamburger and Fries", description: "An all American favorite.")
+meal1 = Meal.create!(name: "Hamburger and Fries", description: "An all American favorite.", image: src_file5)
 meal1.components.push(martinburg)
 meal1.save!
-meal2 = Meal.create!(name: "Feijoada and Rice", description: "A Brasilian traditional dish severd with rice.")
+meal2 = Meal.create!(name: "Feijoada and Rice", description: "A Brasilian traditional dish severd with rice.", image: src_file4)
 meal2.components.push(feijoada, ricecom)
 meal2.save!
-meal3 = Meal.create!(name: "Khao soi and Rice", description: "A Northern Thai Curry with crunchy noodles served with noodles.")
+meal3 = Meal.create!(name: "Khao soi and Rice", description: "A Northern Thai Curry with crunchy noodles served with noodles.", image: src_file)
 meal3.components.push(khaosoi)
 meal3.save!
 
