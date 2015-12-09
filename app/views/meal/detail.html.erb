@@ -55,6 +55,12 @@
 				<p><%= @meal.description.html_safe %></p>
 			  </div>
 			</div>
+
+			<div class="row">
+			  <div class="col-md-12 centered-item">
+				<p><%= link_to "Edit " + @meal.name.html_safe, meal_edit_path(@meal) %></p>
+			  </div>
+			</div>
 		</div>
 	</div>
 </div>
