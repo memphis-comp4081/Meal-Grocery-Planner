@@ -99,6 +99,21 @@ kevin.pantries.push(p9)
 kevin.save!
 scallion.pantries.push(p9)
 
+p10 = Pantry.create!(quantity: 4)
+kevin.pantries.push(p10)
+kevin.save!
+rice.pantries.push(p10)
+
+p11 = Pantry.create!(quantity: 7)
+kevin.pantries.push(p11)
+kevin.save!
+beef.pantries.push(p11)
+
+p12 = Pantry.create!(quantity: 7)
+kevin.pantries.push(p12)
+kevin.save!
+bourbon.pantries.push(p12)
+
 image_src = File.join(Rails.root, "app/assets/images/DSC_0418-Version-2.jpg")
 src_file = File.new(image_src)
 
@@ -133,24 +148,80 @@ ricecom = Component.create!(description: "Simple Rice",
 		instructions: "Add rice, water, salt, boil. Simple.",
 		image: src_file1)
 
+#feijoada seed
 icF = ComponentsIngredient.create!()
-
 blackbeans.components_ingredients.push(icF)
 blackbeans.save!
-linguica.components_ingredients.push(icF)
-linguica.save!
-bayleaf.components_ingredients.push(icF)
-bayleaf.save!
-saltpork.components_ingredients.push(icF)
-saltpork.save!
-scallion.components_ingredients.push(icF)
-scallion.save!
-parsely.components_ingredients.push(icF)
-parsely.save!
-
-
 feijoada.components_ingredients.push(icF)
 feijoada.save!
+icF = ComponentsIngredient.create!()
+linguica.components_ingredients.push(icF)
+linguica.save!
+feijoada.components_ingredients.push(icF)
+feijoada.save!
+icF = ComponentsIngredient.create!()
+bayleaf.components_ingredients.push(icF)
+bayleaf.save!
+feijoada.components_ingredients.push(icF)
+feijoada.save!
+icF = ComponentsIngredient.create!()
+saltpork.components_ingredients.push(icF)
+saltpork.save!
+feijoada.components_ingredients.push(icF)
+feijoada.save!
+icF = ComponentsIngredient.create!()
+scallion.components_ingredients.push(icF)
+scallion.save!
+feijoada.components_ingredients.push(icF)
+feijoada.save!
+icF = ComponentsIngredient.create!()
+parsely.components_ingredients.push(icF)
+parsely.save!
+feijoada.components_ingredients.push(icF)
+feijoada.save!
+
+
+#hambuger seed
+icF = ComponentsIngredient.create!()
+beef.components_ingredients.push(icF)
+beef.save!
+martinburg.components_ingredients.push(icF)
+martinburg.save!
+icF = ComponentsIngredient.create!()
+bourbon.components_ingredients.push(icF)
+bourbon.save!
+martinburg.components_ingredients.push(icF)
+martinburg.save!
+
+#hambuger seed 
+icF = ComponentsIngredient.create!()
+lemmongrass.components_ingredients.push(icF)
+lemmongrass.save!
+khaosoi.components_ingredients.push(icF)
+khaosoi.save!
+icF = ComponentsIngredient.create!()
+chknbreast.components_ingredients.push(icF)
+chknbreast.save!
+khaosoi.components_ingredients.push(icF)
+khaosoi.save!
+icF = ComponentsIngredient.create!()
+coconutmilk.components_ingredients.push(icF)
+coconutmilk.save!
+khaosoi.components_ingredients.push(icF)
+khaosoi.save!
+icF = ComponentsIngredient.create!()
+kaffirlimeleaves.components_ingredients.push(icF)
+kaffirlimeleaves.save!
+khaosoi.components_ingredients.push(icF)
+khaosoi.save!
+
+#hambuger seed 
+icF = ComponentsIngredient.create!()
+rice.components_ingredients.push(icF)
+rice.save!
+ricecom.components_ingredients.push(icF)
+ricecom.save!
+
 
 
 meal1 = Meal.create!(name: "Hamburger and Fries", description: "An all American favorite.", image: src_file5)
