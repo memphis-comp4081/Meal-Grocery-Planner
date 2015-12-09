@@ -17,6 +17,12 @@ class MenuController < ApplicationController
 		puts(current_user.menus)
 	end
 
+	def destroy
+		@menu = Menu.find(params[:id])
+		@menu.destroy
+		redirect_to menu_url
+	end
+
 	def add
 		@meal_list = current_user.meal_lists
 		@menu = Menu.new

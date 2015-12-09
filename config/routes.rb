@@ -59,6 +59,7 @@ Rails.application.routes.draw do
   post 'menu/add', to: 'menu#create'
   get 'menu/rec', to: 'menu#rec', as: 'menu_rec'
   post 'menu/rec', to: 'menu#create_rec'
+  delete 'menu/:id', to: 'menu#destroy', as: 'delete_menu'
 
   get 'user', to: 'user#index', as: 'user'
   get 'user/:id/edit', to: 'user#edit', as: 'user_edit'

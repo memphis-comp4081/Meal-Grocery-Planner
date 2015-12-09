@@ -16,6 +16,7 @@
 					<tr>
 						<th>Meal</th>
 						<th>Time</th>
+						<th />
 					</tr>
 
 					<% @menu.sort{|a,b| a.time <=> b.time}.each do |menu| %>
@@ -23,6 +24,7 @@
 					<tr>
 						<td><%= menu.meal.name %></td>
 						<td><%= menu.time.strftime("%l:%M %P") %></td>
+						<td>[<%= link_to "remove", delete_menu_path(menu), method: :delete %>]</td>
 					</tr>
 
 					<% end %>
