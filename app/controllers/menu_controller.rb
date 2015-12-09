@@ -38,7 +38,8 @@ class MenuController < ApplicationController
 				WHERE 
 					ml.User_ID = " + current_user.id.to_s + "
 					AND p.User_ID = " + current_user.id.to_s + "
-					AND p.id is not null"
+					AND p.id is not null
+					AND ci.quantity > p.quantity"
 		@recommendations = ActiveRecord::Base.connection.execute(@sql)
 	end
 
