@@ -24,7 +24,7 @@ class MenuController < ApplicationController
 
 	def rec
 		@menu = Menu.new
-		@sql = "SELECT
+		@sql = "SELECT DISTINCT
 					m.ID,
 					m.Name
 				FROM 

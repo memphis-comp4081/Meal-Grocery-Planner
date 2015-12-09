@@ -29,7 +29,8 @@ Rails.application.routes.draw do
 
   get 'meal_list', to: 'meal_list#index', as: 'meal_list'
   post 'meal_list', to: 'meal_list#edit', as: 'meal_list_edit'
-  get 'meal_list/:id/delete', to: 'meal_list#delete', as: 'meal_list_delete'
+  delete '/meal_list/:id/delete', to: 'meal_list#delete', as: 'meal_list_delete'
+
 
   #component routes
   get 'component', to: 'component#index', as: 'component'
@@ -55,7 +56,7 @@ Rails.application.routes.draw do
   patch '/meal.:id', to: 'meal#update'
   post 'meal/:id/edit', to: 'meal#update'
   get 'meal/:id/delete', to: 'meal#delete', as:'meal_delete'
-   get 'meal/:id/detail', to: 'meal#detail', as: 'meal_detail'
+  get 'meal/:id/detail', to: 'meal#detail', as: 'meal_detail'
 
   get 'menu', to: 'menu#index', as: 'menu'
   get 'menu/add', to: 'menu#add', as: 'menu_add'

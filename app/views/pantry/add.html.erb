@@ -1,3 +1,9 @@
+  <script type="text/javascript">
+      $(document).ready(function() {
+        $('.select-two').select2();
+      });
+  </script>	
+
 <div class="container-fluid full-height-width">
 	<div class="row well-content">
 		<div class="col-md-8 col-sm-offset-2">
@@ -38,8 +44,8 @@
 			<% end %>
 
 			<div class="row">
-			  <div class="col-md-4 col-md-offset-4">
-				<%= button_to "Don't see your ingredient?", ingredient_add_path, method: :get %>
+			  <div class="col-md-12 centered-item">
+				<%= button_to "Don't see your ingredient?", ingredient_add_path, class: "btn", method: :get %>
 			  </div>
 			</div>
 

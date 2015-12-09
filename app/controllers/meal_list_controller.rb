@@ -8,9 +8,10 @@ class MealListController < ApplicationController
 		@meals = Meal.all
 	end
 	def delete
-		MealList.delete(params[:id])
-		@meal_list = current_user.meal_lists
-		@meals = Meal.all
+		m=MealList.find(params[:id])
+		MealList.delete(m)
+		# @meal_list = current_user.meal_lists
+		# @meals = Meal.all
 		redirect_to meal_list_url
 	end
 	def edit
