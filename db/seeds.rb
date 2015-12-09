@@ -16,7 +16,7 @@ drew = User.create!(email: "drew@memphis.edu", password: "password",
 					 password_confirmation: "password")
 paul = User.create!(email: "paul@memphis.edu", password: "password",
 						password_confirmation: "password")
-# paul.Data.create!(f_name: "Paul", l_name: "edwards")
+
 
 beef = Ingredient.create!(description: "Ground Beef", unit_of_measure: "pound(s)")
 bun = Ingredient.create!(description: "Hamburger Bun", unit_of_measure: "bun(s)")
