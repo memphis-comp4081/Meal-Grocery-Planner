@@ -49,12 +49,14 @@
 		<table class="table table-striped">
 			<tr>
 				<th>Ingredient</th>
+				<th>Quantity</th>
 				<th>Remove</th>
 			</tr>
 
 			<% @comp_ingreds.each do |comp_ingred| %>
 			<tr>
 				<td><%= comp_ingred.ingredient.description %></td>
+				<td><%= comp_ingred.quantity %></td>
 				<td>[<%= link_to "remove", components_ingredient_delete_path(comp_ingred, @component.id) %>]</td>
 			</tr>
 			<% end %>

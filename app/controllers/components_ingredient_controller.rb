@@ -9,7 +9,7 @@ class ComponentsIngredientController < ApplicationController
   end
 
   def create
-	@comp_ingred = ComponentsIngredient.new(params.require(:components_ingredient).permit(:ingredient_id))
+	@comp_ingred = ComponentsIngredient.new(params.require(:components_ingredient).permit(:ingredient_id, :quantity))
 	@comp_ingred.component_id = params[:id]
 	@comp_ingred.save!
 	redirect_to component_edit_url(params[:id])

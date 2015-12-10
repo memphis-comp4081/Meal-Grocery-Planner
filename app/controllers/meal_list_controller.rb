@@ -7,6 +7,7 @@ class MealListController < ApplicationController
 		@meal_list = current_user.meal_lists
 		@meals = Meal.all
 	end
+
 	def delete
 		m=MealList.find(params[:id])
 		MealList.delete(m)
@@ -14,6 +15,7 @@ class MealListController < ApplicationController
 		# @meals = Meal.all
 		redirect_to meal_list_url
 	end
+
 	def edit
 		new_meal = Meal.find(params[:new_meal])
 		dupe = false

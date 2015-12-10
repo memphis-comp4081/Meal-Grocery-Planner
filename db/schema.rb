@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20151130154941) do
   add_index "components", ["meal_id"], name: "index_components_on_meal_id"
 
   create_table "components_ingredients", force: :cascade do |t|
+    t.decimal  "quantity"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "ingredient_id"

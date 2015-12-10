@@ -1,0 +1,35 @@
+<div class="container-fluid full-height-width">
+	<div class="row well-content">
+		<div class="col-md-10 col-sm-offset-1">
+
+		<div class="row">
+		  <div class="col-md-12 centered-item border-bottom">
+			<h2>Your Grocery List</h2>
+		  </div>
+		</div>	
+
+		<div class="row">
+		  <div class="col-md-12 centered-item">
+			<table class="table table-striped">
+				<tr>
+					<th>Ingredient</th>
+					<th>Quantity Needed</th>
+					<th>Quantity in Pantry</th>
+				</tr>
+
+				<% @grocery.each do |grocery| %>
+				
+				<tr>
+					<td><%= grocery["description"] %></td>
+					<td><%= grocery["quantity_needed"] %> <%= grocery["unit_of_measure"] %></td>
+					<td><%= grocery["quantity_pantry"] %> <%= grocery["unit_of_measure"] %></td>
+				</tr>
+
+				<% end %>
+
+			</table>
+		  </div>
+		</div>	
+	</div>
+	</div>
+</div>
