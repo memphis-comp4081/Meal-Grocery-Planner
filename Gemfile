@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # RVM uses these two lines to set the Ruby verison and gemset
-ruby "2.2.1"
+ruby "2.2.6"
 
 # Added the gem devise for top secret password support :)
 gem 'devise'
